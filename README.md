@@ -19,3 +19,4 @@ As a TV and Movie enthusiast, I want to be able to browse through a sizeable sel
   *They can commect on other users' videos
 
 ## Wireframes
+![Homepage Wireframe](welcomepage.jpg)

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if(typeof otherStyleSheet !== 'undefined') { %>
+        <link rel="stylesheet" href=<%= otherStyleSheet %>>
+    <% } else { %>
+        <link rel="stylesheet" href="/styles/main.css">
+    <% } %>
+    <% if(typeof pageName === 'undefined') { %>
+        <title>NETBUSTER!</title>
+    <% } else { %>
+        <title>NETBUSTER | <%= pageName %></title>
+    <% } %>
+</head>
+<body>
+    <nav>
+        <a href="http://localhost:4000/">Home</a>
+        <a href="http://localhost:4000/browse">Browse</a>
+        <a href="http://localhost:4000/userprofile">User Profile</a>
+        <% if(typeof user !== 'undefined') { %>
+            <a href="http://localhost:4000/logout">Logout</a>
+            <p>Hello, <%= user %></p>
+        <% } else { %> 
+            <a href="http://localhost:4000/login">Login</a>
+            <a href="http://localhost:4000/signup">Signup</a>
+        <% } %>
+    </nav>

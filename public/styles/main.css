@@ -1,0 +1,9 @@
+body {
+    background-color: darkblue;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}

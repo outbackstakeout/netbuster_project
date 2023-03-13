@@ -5,6 +5,9 @@ const mediaSchema = new mongoose.Schema(
         name: String,
         image: String,
         picture: String
+    },
+    {
+        timestamps: true
     }
 )
 

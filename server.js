@@ -7,7 +7,9 @@ const mediaController = require('./controllers/media');
 const userController = require('./controllers/user')
 
 // views directory link
-app.set('views engine', 'ejs');
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
 
 // landing page route
 app.get('/', (req, res) => {
@@ -34,6 +36,6 @@ app.get('/*', (req, res) => {
 });
 
 // listening on port 4000
-app.listen(4000, () => {
+app.listen(4000, function () {
     console.log('I am listening on port 4000')
 });

@@ -4,13 +4,30 @@ body {
 }
 
 h1 {
-    display:flex;
-    justify-content: center;
-    margin-top: 15%;
-    font-size: 3rem;
-    text-shadow: 20px;
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 42%;
+    margin-top: 10%;
+}
 
-    
+.slogan {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+        
 }
 
 #logo {
@@ -19,6 +36,10 @@ h1 {
   display: block;
   position: absolute;
     
+}
+
+#logo:hover {
+    border-color: gold;
 }
 
 #banner1 {
@@ -46,4 +67,37 @@ nav {
 #redCarpet {
     width: 61%;
     margin-left: 20%;
+    margin-top: 15%;
+}
+
+#signin {
+    position: absolute;
+    border-radius: 20px;
+    width: 4em;
+    height: 2em;
+    margin-left: 45%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15%;
+    background-color: goldenrod;
+}
+
+#signup {
+    position: absolute;
+    border-radius: 20px;
+    width: 4.3em;
+    height: 2em;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15%;
+    margin-left: 51%;
+    background-color: goldenrod;
+}
+
+#signin:hover {
+    border-color: gold;
+}
+
+#signup:hover {
+    border-color: gold;
 }

@@ -1,9 +1,31 @@
-<%- include('./partials/headAndNav', {pageName: "Home page"}) %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if(typeof otherStyleSheet !== 'undefined') { %>
+        <link rel="stylesheet" href=<%= otherStyleSheet %>>
+    <% } else { %>
+        <link rel="stylesheet" href="/styles/main.css">
+    <% } %>
+    <% if(typeof pageName === 'undefined') { %>
+        <title>NETBUSTER!</title>
+    <% } else { %>
+        <title>NETBUSTER | <%= pageName %></title>
+    <% } %>
+</head>
+<body>
 <link rel="stylesheet" href="/public/main.css">
 <div class="displays">
 <img src="https://i.imgur.com/skKx9fe.png" alt="movie banner" id="banner1">
 <img src="https://imgur.com/2w3a5Fu.png" alt="Netbuster Logo" id="logo">
-<img src="https://i.imgur.com/nYMiZlz.png" alt="movie banner 2" id="banner2">
+<img src="https://i.imgur.com/nYMiZlz.png" alt="movie banner 2" id="banner2"> 
+<h1 class="slogan">Be Kind, Unwind</h1>
+<button class="btn" id="signin">Sign In</button>
+<button class="btn" id="signup">Sign Up</button>
+<img src="https://i.imgur.com/6RKupTu.png" alt="Red Carpet" id="redCarpet">
+
 </div>
-    <h1>Be Kind, Unwind</h1>
-    <img src="https://i.imgur.com/6RKupTu.png" alt="Red Carpet" id="redCarpet">
+</body>
+</html>

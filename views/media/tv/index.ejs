@@ -1,0 +1,11 @@
+<%- include('../partials/headAndNav', { pageName: "All Tv Shows"}) %>
+    <h1>All Tv Shows</h1> 
+    <% for(let i = 0; i < tv.length; i++) { %>
+        <a href="/tv/<%= tv[i]._id %>">
+            <h3>Name: <%= tv[i].name %></h3>
+            <img src=<%= tv[i].image %> alt=<%= tv[i].name %>>
+        </a>
+        <p>Decription: <%= tv[i].dexcription %></p>
+        <hr />
+    <% } %>
+    

@@ -3,7 +3,154 @@ body {
     color: white;
 }
 
+h1 {
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 42%;
+    margin-top: 10%;
+}
+
+.slogan {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+        
+}
+
+#tvshows{
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 47%;
+    margin-top: 20%;
+}
+#movies{
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 48%;
+    margin-top: 22%;
+}
+#games{
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 48%;
+    margin-top: 24%;
+}
+#more{
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 47.5%;
+    margin-top: 26%;
+}
+
+.features {
+    animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+    color: white;
+    text-shadow: 0 0 12px gold, 0 0 50px gold, 0 0 100px gold;
+
+    }
+    10%, 90% {
+    color: black;
+    text-shadow: none;
+    }
+}
+.features > #tvshows {
+    animation-delay: 0.25s;
+}
+.features > #movies {
+    animation-delay: 0.5s;
+}
+.features > #games {
+    animation-delay: 0.75s;
+}
+.features > #more {
+    animation-delay: 1s;
+}
+
+
+#logo {
+    width: 20%;
+  margin-left: 40%;
+  display: block;
+  position: absolute;
+    
+}
+
+#logo:hover {
+    
+}
+
+#banner1 {
+    position:absolute;
+    height: 100%;
+    width: 20%;
+    border: 5px solid goldenrod;
+
+
+}
+
+#banner2 {
+    position:absolute;
+    height: 100%;
+    width: 20%;
+    margin-left: 80%;
+    border: 5px solid goldenrod;
+}
+
 nav {
     display: flex;
     justify-content: space-evenly;
+}
+
+#redCarpet {
+    width: 61%;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+
+#signin {
+    position: absolute;
+    border-radius: 20px;
+    width: 4em;
+    height: 2em;
+    margin-left: 45%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15%;
+    background-color: goldenrod;
+}
+
+#signup {
+    position: absolute;
+    border-radius: 20px;
+    width: 4.3em;
+    height: 2em;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15%;
+    margin-left: 51%;
+    background-color: goldenrod;
+}
+
+#signin:hover {
+    border-color: gold;
+}
+
+#signup:hover {
+    border-color: gold;
 }

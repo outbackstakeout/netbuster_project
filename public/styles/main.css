@@ -3,7 +3,47 @@ body {
     color: white;
 }
 
+h1 {
+    display:flex;
+    justify-content: center;
+    margin-top: 15%;
+    font-size: 3rem;
+    text-shadow: 20px;
+
+    
+}
+
+#logo {
+    width: 20%;
+  margin-left: 40%;
+  display: block;
+  position: absolute;
+    
+}
+
+#banner1 {
+    position:absolute;
+    height: 100%;
+    width: 20%;
+    border: 5px solid goldenrod;
+
+
+}
+
+#banner2 {
+    position:absolute;
+    height: 100%;
+    width: 20%;
+    margin-left: 80%;
+    border: 5px solid goldenrod;
+}
+
 nav {
     display: flex;
     justify-content: space-evenly;
+}
+
+#redCarpet {
+    width: 61%;
+    margin-left: 20%;
 }

@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { MediaSchema } = require('../models');
 
-let mySeedData = [
+let movieSeedData = [
     {
         name: "21 Jump Street",
         img: "https://i.imgur.com/UJWuB1t.jpeg",
@@ -11,7 +11,7 @@ let mySeedData = [
     },
     {
         name: "The Dark Knight",
-        img: "https://i.imgur.com/n3qwEz6.jpeg",
+        img: "https://i.imgur.com/jjGq99Q.jpeg",
         description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
     },
     {
@@ -26,7 +26,7 @@ let mySeedData = [
     },
     {
         name: "F9",
-        img: "https://i.imgur.com/VKnaHn6.jpeg",
+        img: "https://i.imgur.com/s93RjMB.jpeg",
         description: "Dom and the crew must take on an international terrorist who turns out to be Dom and Mia's estranged brother."
     },
     {
@@ -56,12 +56,52 @@ let mySeedData = [
     }
 ]
 
+let televisionSeedData = [
+    {
+        name: "The 100",
+        img: "https://i.imgur.com/rqp7tMa.jpeg",
+        description: "Set 97 years after a nuclear war destroyed civilization, when a spaceship housing humanity's lone survivors sends 100 juvenile delinquents back to Earth, hoping to repopulate the planet."
+    },
+    {
+        name: "Breaking Bad",
+        img: "https://i.imgur.com/XqBcvgM.jpeg",
+        description: "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future."
+    },
+    {
+        name: "Dragon Ball Z",
+        img: "https://i.imgur.com/llUu48a.jpeg",
+        description: "With the help of the powerful Dragonballs, a team of fighters led by the saiyan warrior Goku defend the planet earth from extraterrestrial enemies."
+    },
+    {
+        name: "The Flash",
+        img: "https://i.imgur.com/ChUj8xm.jpeg",
+        description: "After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the Flash, and fighting crime in Central City."
+    },
+    {
+        name: "The Last of Us",
+        img: "https://i.imgur.com/NHqI9Rw.jpeg",
+        description: "In a hostile, post- pandemic world, Joel and Ellie, brought together by desperate circumstances, must rely on each other to survive a brutal journey across what remains of the United States."
+    },
+    {
+        name: "The Mandalorian",
+        img: "https://imgpile.com/images/hUHM6R.jpg",
+        description: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic."
+    },
+    {
+        name: "Power",
+        img: "https://imgpile.com/images/hUHcIW.jpg",
+        description: "James 'Ghost' St. Patrick, a wealthy New York nightclub owner who has it all, catering to the city's elite and dreaming big, lives a double life as a drug kingpin."
+    }
+]
+
 // seed route to get data into Mongo
 router.get('/seed', async (req, res, next) => {
     try {
         const deletedOldOnes = await MediaSchema.deleteMany({});
-        const addMedia = await MediaSchema.insertMany(mySeedData);
-        console.log(addMedia);
+        const addMovies = await MediaSchema.insertMany(movieSeedData);
+        const addTelevision = await MediaSchema.insertMany(televisionSeedData);
+        console.log(addMovies);
+        console.log(addTelevision);
         res.redirect('/home');
     } catch (err) {
         console.log(err);

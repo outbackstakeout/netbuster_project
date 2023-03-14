@@ -4,12 +4,15 @@ const router = express.Router();
 const { UserSchema } = require('../models');
 
 router.get('/', (req, res) => {
-    res.render('/user/index.ejs');
+    res.render('/media/index.ejs');
 });
 
 router.post('/new_account', async (req, res, next) => {
     try {
-
+        console.log(req.body);
+        const newUser = await UserSchema.create(req.body)
+        console.log(newUser);
+        res.redirect('/');
     } catch (err) {
         console.log(err);
         return next();

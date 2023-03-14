@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 
 // linking controllers to be used
-const mediaController = require('./controllers/media');
-const userController = require('./controllers/user')
+const { mediaController, userController } = require('./controllers');
+// const userController = require('./controllers/user')
 
 // views directory link
 app.set('view engine', 'ejs');

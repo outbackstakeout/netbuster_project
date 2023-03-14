@@ -110,7 +110,7 @@ router.get('/seed', async (req, res, next) => {
 });
 
 // routing to index of movies and shows
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     let myMedia;
     try {
         // this will comb through the database to find our media

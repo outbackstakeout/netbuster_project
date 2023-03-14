@@ -1,10 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const { UserSchema } = require('../models');
+const { UserSchema, MediaSchema } = require('../models');
 
-router.get('/', (req, res) => {
-    res.render('/media/index.ejs');
+router.get('/', async (req, res, next) => {
+    let myMedia;
+    try {
+        // this will comb through the database to find our media
+        myMedia = await MediaSchema.find({});
+        console.log(myMedia);
+        // this context will pass Media as an array
+        res.render('media/index.ejs', { media: myMedia });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 });
 
 router.get('/signinpage', (req, res) => {

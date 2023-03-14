@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-// linking controllers to be used
+// linking controllers to be used, both controllers conflated since we have an index.js file exporting both through the controllers directory
 const { mediaController, userController } = require('./controllers');
 // const userController = require('./controllers/user')
 

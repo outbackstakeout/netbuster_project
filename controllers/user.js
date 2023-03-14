@@ -7,6 +7,14 @@ router.get('/', (req, res) => {
     res.render('/media/index.ejs');
 });
 
+router.get('/signinpage', (req, res) => {
+    res.render('user/signin.ejs')
+})
+
+router.get('/signuppage', (req, res) => {
+    res.render('user/signup.ejs')
+})
+
 router.post('/signin', async (req, res, next) => {
     try {
         const loginInfo = req.body;
@@ -49,8 +57,8 @@ router.post('/signup', async (req, res, next) => {
     }
 })
 
-router.get('/:id', (req, res) => {
-    res.render('/user/show.ejs');
-});
+// router.get('/:id', (req, res) => {
+//     res.render('/user/show.ejs');
+// });
 
 module.exports = router;

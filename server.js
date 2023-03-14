@@ -18,15 +18,15 @@ app.get('/', (req, res) => {
     res.render('landing');
 });
 
-// signup page route
-app.get('/signup', (req, res) => {
-    res.render('signup');
-});
+// // signup page route
+// app.get('/signup', (req, res) => {
+//     res.render('signup');
+// });
 
-// signin page route
-app.get('/signin', (req, res) => {
-    res.render('signin');
-});
+// // signin page route
+// app.get('/signin', (req, res) => {
+//     res.render('signin');
+// });
 
 // linking routes for controllers
 app.use('/home', media);

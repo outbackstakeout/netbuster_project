@@ -1,7 +1,7 @@
-<%- include('./partials/headAndNav', {pageName: "Login" }) %>
+<%- include('../partials/headAndNav', {pageName: "Login" }) %>
 
     <h1>Sign in to continue streaming</h1>
-    <form method="POST" action="/login">
+    <form method="POST" action="signin">
         <div>
             <label for="username">Enter your username</label>
             <input type="text" name="username" id="username">

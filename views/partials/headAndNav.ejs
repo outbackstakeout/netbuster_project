@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <% if(typeof otherStyleSheet !== 'undefined') { %>
-        <link rel="stylesheet" href=<%= otherStyleSheet %>>
-    <% } else { %>
-        <link rel="stylesheet" href="/styles/main.css">
-    <% } %>
-    <% if(typeof pageName === 'undefined') { %>
-        <title>NETBUSTER!</title>
-    <% } else { %>
-        <title>NETBUSTER | <%= pageName %></title>
-    <% } %>
+    <% if(typeof otherStyleSheet !=='undefined' ) { %>
+        <link rel="stylesheet" href=<%=otherStyleSheet %>>
+        <% } else { %>
+            <link rel="stylesheet" href="/styles/main.css">
+            <% } %>
+                <% if(typeof pageName==='undefined' ) { %>
+                    <title>NETBUSTER!</title>
+                    <% } else { %>
+                        <title>NETBUSTER | <%= pageName %>
+                        </title>
+                        <% } %>
 </head>
+
 <body>
     <nav>
-        <a href="http://localhost:4000/">Home</a>
+        <!-- /home will make this link through the media controller to return views/media/index.ejs -->
+        <a href="http://localhost:4000/home">Home</a>
+        <!-- do we need a browse page? or can this be the same as the main media index route? -->
         <a href="http://localhost:4000/browse">Browse</a>
+
         <a href="http://localhost:4000/userprofile">User Profile</a>
-        <% if(typeof user !== 'undefined') { %>
+        <% if(typeof user !=='undefined' ) { %>
             <a href="http://localhost:4000/logout">Logout</a>
-            <p>Hello, <%= user %></p>
-        <% } else { %> 
-            <a href="http://localhost:4000/login">Login</a>
-            <a href="http://localhost:4000/signup">Signup</a>
-        <% } %>
+            <p>Hello, <%= user %>
+            </p>
+            <% } else { %>
+                <!-- do we need to reroute back to login or sign up if users need to sign in to get past our sweet frickin' landing page? Or should we allow them to browse our library before creating an account/signing in? either is fine with me, though I don't think Netflix lets viewers browse first - but we can do whatever -->
+                <a href="http://localhost:4000/login">Login</a>
+                <a href="http://localhost:4000/signup">Signup</a>
+                <% } %>
     </nav>

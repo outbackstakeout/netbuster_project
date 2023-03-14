@@ -56,7 +56,7 @@ h1 {
 }
 
 .features {
-    animation: glow 2s ease-in-out infinite;
+    animation: glow 2s ease-in-out;
 }
 @keyframes glow{
     0%, 100%{

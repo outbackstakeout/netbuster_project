@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const { MediaSchema } = require('../models');
+
 let mySeedData = [
     {
         name: "21 Jump Street",
@@ -54,10 +56,34 @@ let mySeedData = [
     }
 ]
 
-// routing to index of movies and shows
-router.get('/', (req, res) => {
-    res.render('media/index.ejs');
+// seed route to get data into Mongo
+router.get('/seed', async (req, res, next) => {
+    try {
+        const deletedOldOnes = await MediaSchema.deleteMany({});
+        const addMedia = await MediaSchema.insertMany(mySeedData);
+        console.log(addMedia);
+        res.redirect('/home');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 });
+
+// routing to index of movies and shows
+router.get('/', async (req, res) => {
+    let myMedia;
+    try {
+        // this will comb through the database to find our media
+        myMedia = await MediaSchema.find({});
+        console.log(myMedia);
+        // this context will pass Media as an array
+        res.render('media/index.ejs', { media: myMedia });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+});
+
 
 // routing to TV shows only
 router.get('/tv', (req, res) => {

@@ -15,6 +15,10 @@ router.get('/signuppage', (req, res) => {
     res.render('user/signup.ejs')
 })
 
+router.get('/profile', (req, res) => {
+    res.render('user/show.ejs');
+})
+
 router.post('/signin', async (req, res, next) => {
     try {
         const loginInfo = req.body;
@@ -23,10 +27,10 @@ router.post('/signin', async (req, res, next) => {
         const match = await bcrypt.compare(loginInfo.password, foundUser.password);
         console.log(match);
         if (!match) return res.send("Incorrect email or password");
-        req.session.currentUser = {
-            id: foundUser._id,
-            username: foundUser.username
-        };
+        // req.session.currentUser = {
+        //     id: foundUser._id,
+        //     username: foundUser.username
+        // };
         return res.redirect('/home');
     } catch (err) {
         console.log(err);

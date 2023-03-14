@@ -1,10 +1,19 @@
 <%- include('../partials/headAndNav', {pageName: "Home page" }) %>
-    <h1>NETBUSTER - Media Index Route (library of movies and shows)</h1>
-    <h3>Be kind, Unwind</h3>
+    <h1 class="title">NETBUSTER - Media Index Route (library of movies and shows)</h1>
+    <h3 class="bekindunwind">Be kind, Unwind</h3>
+    <div class="seed">
 <% for(let i = 0; i < media.length; i++) { %>
+        <div id="name">
+    <%= media[i].name %>
+        </div>
+        <div id="poster">
     <img src= <%= media[i].img %> alt="Movie Selection">
+        </div>
+        <div id="desc">
+    <%= media[i].description %>
+        </div>
    <% } %>
-   
+   </div>
     <h4><a href="/home/tv/show">A show</a></h4>
     <h4><a href="/home/tv/show">Another show</a></h4>
     <h4><a href="/home/tv/show">Yet one more</a></h4>

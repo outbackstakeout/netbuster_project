@@ -10,6 +10,16 @@ h1 {
     margin-top: 10%;
 }
 
+.title {
+    position: relative;
+}
+
+.bekindunwind {
+    /* position: relative; */
+    display: block;
+    justify-content: center;
+}
+
 .slogan {
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -153,4 +163,25 @@ nav {
 
 #signup:hover {
     border-color: gold;
+}
+
+.seed {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#poster{ 
+    white-space: nowrap;
+}
+
+#poster img {
+    height: auto;
+    object-fit: cover;
+    width: 340px;
+}
+
+#name {
+    /* padding-top: 2%; */
 }

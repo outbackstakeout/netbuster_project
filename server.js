@@ -2,9 +2,9 @@
 const express = require('express');
 const app = express();
 
-// linking controllers to be used
-const mediaController = require('./controllers/media');
-const userController = require('./controllers/user')
+// linking controllers to be used, both controllers conflated since we have an index.js file exporting both through the controllers directory
+const { media, user } = require('./controllers');
+// const userController = require('./controllers/user')
 
 // views directory link
 app.set('view engine', 'ejs');
@@ -27,8 +27,8 @@ app.get('/signin', (req, res) => {
 });
 
 // linking routes for controllers
-app.use('/home', mediaController);
-app.use('/user', userController);
+app.use('/home', media);
+app.use('/user', user);
 
 // 404 catch all
 app.get('/*', (req, res) => {

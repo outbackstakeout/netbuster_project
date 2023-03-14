@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const mediaSchema = new mongoose.Schema(
     {
         name: String,
-        image: String,
-        picture: String
+        img: String,
+        description: String
     },
     {
         timestamps: true

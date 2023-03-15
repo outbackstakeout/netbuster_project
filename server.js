@@ -2,6 +2,9 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
+require('dotenv').config();
+
 
 // linking controllers to be used, both controllers conflated since we have an index.js file exporting both through the controllers directory
 const { media, user } = require('./controllers');
@@ -11,6 +14,11 @@ const { media, user } = require('./controllers');
 app.set('view engine', 'ejs');
 
 app.use(session({
+    store: MongoStore.create(
+        {
+            mongoUrl: process.env.MONGO_DB_URI
+        }
+    ),
     secret: '12345',
     resave: false,
     saveUninitialized: true,

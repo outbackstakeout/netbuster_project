@@ -118,7 +118,7 @@ router.get('/', async (req, res, next) => {
         // console.log(myMedia);
         console.log(req.session);
         // this context will pass Media as an array
-        res.render('media/index.ejs', { media: myMedia });
+        res.render('media/index.ejs', { media: myMedia, user: req.session.currentUser });
     } catch (err) {
         console.log(err);
         return next();

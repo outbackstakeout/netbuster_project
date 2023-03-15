@@ -27,7 +27,7 @@ router.get('/signuppage', (req, res) => {
 })
 
 router.get('/profile', (req, res) => {
-    res.render('user/show.ejs');
+    res.render('user/show.ejs', { user: req.session.currentUser });
 })
 
 router.post('/signin', async (req, res, next) => {
@@ -64,6 +64,7 @@ router.post('/signup', async (req, res, next) => {
         console.log(`My hash is ${hash}`);
         userInfo.password = hash;
         const newUser = await UserSchema.create(userInfo);
+        delete newUser.password;
         console.log(newUser);
         req.session.currentUser = newUser;
         return res.redirect('/home');
@@ -73,6 +74,11 @@ router.post('/signup', async (req, res, next) => {
     }
 })
 
+router.get('/logout', function (req, res) {
+    req.session.destroy(function (err) {
+        res.redirect('/');
+    });
+});
 // router.get('/:id', (req, res) => {
 //     res.render('/user/show.ejs');
 // });

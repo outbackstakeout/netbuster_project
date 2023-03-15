@@ -3,12 +3,13 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { UserSchema, MediaSchema } = require('../models');
 
+// might want to make this redirect instead
 router.get('/', async (req, res, next) => {
     let myMedia;
     try {
         // this will comb through the database to find our media
         myMedia = await MediaSchema.find({});
-        console.log(myMedia);
+        // console.log(myMedia);
         // this context will pass Media as an array
         res.render('media/index.ejs', { media: myMedia });
     } catch (err) {
@@ -37,10 +38,10 @@ router.post('/signin', async (req, res, next) => {
         const match = await bcrypt.compare(loginInfo.password, foundUser.password);
         console.log(match);
         if (!match) return res.send("Incorrect email or password");
-        // req.session.currentUser = {
-        //     id: foundUser._id,
-        //     username: foundUser.username
-        // };
+        if (foundUser && match) {
+            delete foundUser.password;
+            req.session.currentUser = foundUser;
+        }
         return res.redirect('/home');
     } catch (err) {
         console.log(err);
@@ -64,6 +65,7 @@ router.post('/signup', async (req, res, next) => {
         userInfo.password = hash;
         const newUser = await UserSchema.create(userInfo);
         console.log(newUser);
+        req.session.currentUser = newUser;
         return res.redirect('/home');
     } catch (err) {
         console.log(err);

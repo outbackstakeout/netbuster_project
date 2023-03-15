@@ -1,6 +1,7 @@
 // setting up express
 const express = require('express');
 const app = express();
+const session = require('express-session');
 
 // linking controllers to be used, both controllers conflated since we have an index.js file exporting both through the controllers directory
 const { media, user } = require('./controllers');
@@ -9,12 +10,22 @@ const { media, user } = require('./controllers');
 // views directory link
 app.set('view engine', 'ejs');
 
+app.use(session({
+    secret: '12345',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 60
+    }
+}))
+
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: false }));
 
 // landing page route
 app.get('/', (req, res) => {
+    console.log(req.session);
     res.render('landing');
 });
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <% if(typeof otherStyleSheet !=='undefined' ) { %>
         <link rel="stylesheet" href=<%=otherStyleSheet %>>
         <% } else { %>
@@ -19,20 +20,53 @@
 </head>
 
 <body>
-    <nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <nav id="bar" class="navbar navbar-dark" style="background-color: goldenrod; 
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);">
         <!-- /home will make this link through the media controller to return views/media/index.ejs -->
-        <a href="http://localhost:4000/home">Home</a>
+        <img src="https://i.imgur.com/2w3a5Fu.png" width="120" height="70"/>
+        <a 
+        href="http://localhost:4000/home" class="navbar-brand mb-0 h1" id="homebtn">
+        Home</a>
         <!-- do we need a browse page? or can this be the same as the main media index route? -->
-        <a href="http://localhost:4000/browse">Browse</a>
-
-        <a href="http://localhost:4000/user">User Profile</a>
+        <div class="navbar-brand mb-0 h1" id="browse">
+           <a href="http://localhost:4000/browse" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+           data-bs-toggle="dropdown">Browse</a>
+           <ul class="dropdown-menu"
+               aria-labelledby="navbarDropdown">
+              <li>
+                <a href="#"                                 class="dropdown-item">Movies
+                </a>
+              </li>
+              <li>
+                <a href="#" 
+                   class="dropdown-item">TV Shows
+                </a>
+              </li>
+              <li>
+                <a href="#" 
+                   class="dropdown-item">Games
+                </a>
+              </li>
+           </ul>
+        </div>
+        <a href="http://localhost:4000/user" class="navbar-brand mb-0 h1" id="userprofile">User Profile</a>
         <% if(typeof user !=='undefined' ) { %>
             <a href="http://localhost:4000/logout">Logout</a>
             <p>Hello, <%= user %>
             </p>
             <% } else { %>
                 <!-- do we need to reroute back to login or sign up if users need to sign in to get past our sweet frickin' landing page? Or should we allow them to browse our library before creating an account/signing in? either is fine with me, though I don't think Netflix lets viewers browse first - but we can do whatever -->
-                <a href="http://localhost:4000/login">Login</a>
-                <a href="http://localhost:4000/signup">Signup</a>
+                <a href="http://localhost:4000/login" class="navbar-brand mb-0 h1" id="loginbtn">Login</a>
+                <a href="http://localhost:4000/signup" class="navbar-brand mb-0 h1" id="signupbtn">Signup</a>
                 <% } %>
     </nav>

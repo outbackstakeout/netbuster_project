@@ -74,6 +74,18 @@ router.post('/signup', async (req, res, next) => {
     }
 })
 
+router.get('/delete', async (req, res, next) => {
+    try {
+        console.log("I'm hitting the delete route! (controllers/user.js)");
+        const userGettingDeleted = await UserSchema.findByIdAndDelete(req.session.currentUser._id);
+        console.log(userGettingDeleted);
+        res.redirect('/');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
+
 router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
         res.redirect('/');

@@ -4,6 +4,7 @@ const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 require('dotenv').config();
+const methodOverride = require('method-override');
 
 
 // linking controllers to be used, both controllers conflated since we have an index.js file exporting both through the controllers directory
@@ -30,6 +31,8 @@ app.use(session({
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use(methodOverride('_method'));
 
 // landing page route
 app.get('/', (req, res) => {

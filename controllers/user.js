@@ -27,7 +27,15 @@ router.get('/signuppage', (req, res) => {
 })
 
 router.get('/profile', async (req, res, next) => {
-    res.render('user/show.ejs', { user: req.session.currentUser });
+    let user;
+    try {
+        findUser = await UserSchema.findById(req.session.currentUser)
+        res.render('user/show.ejs', { user: findUser });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+    console.log(req.session.currentUser);
 })
 
 router.post('/signin', async (req, res, next) => {

@@ -121,7 +121,7 @@ router.get('/', async (req, res, next) => {
         // this will comb through the database to find our media
         myMedia = await MediaSchema.find({});
         // console.log(myMedia);
-        findUser = await UserSchema.findById(req.session.currentUser)
+        findUser = await UserSchema.findById(req.session.currentUser._id)
         console.log(req.session);
         // this context will pass Media as an array
         res.render('media/index.ejs', { media: myMedia, user: findUser });

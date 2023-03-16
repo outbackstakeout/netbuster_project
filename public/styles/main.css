@@ -513,10 +513,6 @@ nav {
     /* display: none; */
 }
 
-#one{
-    /* margin-left: 5%; */
-}
-
-#two {
-
+.atag{
+    position: absolute;
 }

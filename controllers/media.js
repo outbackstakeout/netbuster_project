@@ -103,8 +103,8 @@ router.get('/seed', async (req, res, next) => {
         const addMovies = await MediaSchema.insertMany(movieSeedData);
         const addTelevision = await MediaSchema.insertMany(televisionSeedData);
         // console logs
-        console.log(addMovies);
-        console.log(addTelevision);
+        // console.log(addMovies);
+        // console.log(addTelevision);
         // redirects to the home page (index of media)
         res.redirect('/home');
     } catch (err) {
@@ -122,7 +122,7 @@ router.get('/', async (req, res, next) => {
         myMedia = await MediaSchema.find({});
         // console.log(myMedia);
         findUser = await UserSchema.findById(req.session.currentUser._id)
-        console.log(req.session);
+        // console.log(req.session);
         // this context will pass Media as an array
         res.render('media/index.ejs', { media: myMedia, user: findUser });
     } catch (err) {
@@ -137,8 +137,14 @@ router.get('/tv', (req, res) => {
     res.render('media/tv/index.ejs')
 });
 
-// routing to specific tv show from the tv show index
-router.get('/tv/:id', (req, res) => {
+// 🌈routing to specific tv show from the tv show index
+router.get('/tv/:id', async (req, res, next) => {
+    try {
+
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
     res.render('media/show.ejs')
 });
 
@@ -147,9 +153,20 @@ router.get('/movies', (req, res) => {
     res.render('media/movies/index.ejs')
 });
 
-// routing to specific movie from the movie index
-router.get('/movies/:id', (req, res) => {
-    res.render('media/show.ejs')
+// 🌈routing to specific movie from the movie index
+router.get('/movies/:id', async (req, res, next) => {
+    let myMedia;
+    let user;
+    try {
+        myMedia = await MediaSchema.findById(req.params.id);
+        findUser = await UserSchema.findById(req.session.currentUser._id)
+        console.log(myMedia);
+        console.log(findUser);
+        res.render('media/show.ejs', { user: findUser, media: myMedia });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 });
 
 // routing to show page for specific movie or TV from the general home page

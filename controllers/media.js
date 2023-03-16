@@ -138,15 +138,15 @@ router.get('/tv', (req, res) => {
 });
 
 // 🌈routing to specific tv show from the tv show index
-router.get('/tv/:id', async (req, res, next) => {
-    try {
+// router.get('/tv/:id', async (req, res, next) => {
+//     try {
 
-    } catch (err) {
-        console.log(err);
-        return next();
-    }
-    res.render('media/show.ejs')
-});
+//     } catch (err) {
+//         console.log(err);
+//         return next();
+//     }
+//     res.render('media/show.ejs')
+// });
 
 // routing to movies only
 router.get('/movies', (req, res) => {
@@ -156,10 +156,10 @@ router.get('/movies', (req, res) => {
 // 🌈routing to specific movie from the movie index
 router.get('/movies/:id', async (req, res, next) => {
     let myMedia;
-    let user;
+    let findUser;
     try {
-        myMedia = await MediaSchema.findById(req.params.id);
-        findUser = await UserSchema.findById(req.session.currentUser._id)
+        myMedia = await MediaSchema.findOne({_id:req.params.id});
+        findUser = await UserSchema.findOne({_id:req.session.currentUser._id})
         console.log(myMedia);
         console.log(findUser);
         res.render('media/show.ejs', { user: findUser, media: myMedia });

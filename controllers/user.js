@@ -26,7 +26,7 @@ router.get('/signuppage', (req, res) => {
     res.render('user/signup.ejs')
 })
 
-router.get('/profile', (req, res) => {
+router.get('/profile', async (req, res, next) => {
     res.render('user/show.ejs', { user: req.session.currentUser });
 })
 
@@ -90,8 +90,13 @@ router.put('/update/:id', async (req, res, next) => {
     try {
         console.log(req.params.id);
         console.log(req.body);
-        const updateItem = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
-        console.log(updateItem);
+        console.log("Im hitting the post/put route")
+        const updatedUser = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedUser);
+        // req.session.currentUser = await UserSchema.findById(req.params.id);
+        // let current = req.session.currentUser
+        // myMedia = await MediaSchema.find({});
+        // res.render('media/index.ejs', { user: current, media: myMedia });
         res.redirect('/home');
     } catch (err) {
         console.log(err);

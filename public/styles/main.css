@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     background-color: darkblue;
     color: white;
     /* height: 100%;
@@ -93,7 +91,8 @@ h1 {
 }
 
 .title {
-
+    font-size: 2.5rem;
+    padding-bottom: 3%;
     display: flex;
     justify-content: center;
     position: relative;
@@ -139,7 +138,24 @@ h1 {
 }
 
 .slogan {
-    
+    margin-left: 42.5%;
+    margin-top: 11%;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
         
 }
 
@@ -264,16 +280,48 @@ nav {
     border-color: gold;
 }
 
+.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
+    font-size: xx-large;
+}
+
+.signintocont{
+    font-size: 2.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 18vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
+#signbtn {
+    margin-top: 8vh;
+    position: absolute;
+}
 .seed {
  
 }
 
 .col {
-    block-size: 40rem;
+    block-size: 30rem;
+    
 }
 
 .row {
-    block-size: 40rem;
+    block-size: 30rem;
 }
 
 /* .container{

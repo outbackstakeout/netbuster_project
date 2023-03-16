@@ -368,7 +368,7 @@ nav {
     font-size: xx-large;
 }
 
-.logout{
+/* .logout{
     text-transform: uppercase;
     font-family: poppins; font-weight: 900; 
     text-shadow: 1px 1px 1px black,
@@ -378,8 +378,8 @@ nav {
     1px 5px 1px black,
     1px 6px 1px black,
 1px 15px 5px rgba(16,16,16,0.4),
-1px 18px 8px rgba(16,16,16,0.2);"
-}
+1px 18px 8px rgba(16,16,16,0.2);
+} */
 
 .signintocont{
     font-size: 2.5rem;

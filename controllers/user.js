@@ -26,8 +26,16 @@ router.get('/signuppage', (req, res) => {
     res.render('user/signup.ejs')
 })
 
-router.get('/profile', (req, res) => {
-    res.render('user/show.ejs');
+router.get('/profile', async (req, res, next) => {
+    let user;
+    try {
+        findUser = await UserSchema.findById(req.session.currentUser)
+        res.render('user/show.ejs', { user: findUser });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+    console.log(req.session.currentUser);
 })
 
 router.post('/signin', async (req, res, next) => {
@@ -64,6 +72,7 @@ router.post('/signup', async (req, res, next) => {
         console.log(`My hash is ${hash}`);
         userInfo.password = hash;
         const newUser = await UserSchema.create(userInfo);
+        delete newUser.password;
         console.log(newUser);
         req.session.currentUser = newUser;
         return res.redirect('/home');
@@ -73,6 +82,41 @@ router.post('/signup', async (req, res, next) => {
     }
 })
 
+router.get('/delete', async (req, res, next) => {
+    try {
+        console.log("I'm hitting the delete route! (controllers/user.js)");
+        const userGettingDeleted = await UserSchema.findByIdAndDelete(req.session.currentUser._id);
+        console.log(userGettingDeleted);
+        res.redirect('/');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
+
+router.put('/update/:id', async (req, res, next) => {
+    try {
+        console.log(req.params.id);
+        console.log(req.body);
+        console.log("Im hitting the post/put route")
+        const updatedUser = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedUser);
+        // req.session.currentUser = await UserSchema.findById(req.params.id);
+        // let current = req.session.currentUser
+        // myMedia = await MediaSchema.find({});
+        // res.render('media/index.ejs', { user: current, media: myMedia });
+        res.redirect('/home');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
+
+router.get('/logout', function (req, res) {
+    req.session.destroy(function (err) {
+        res.redirect('/');
+    });
+});
 // router.get('/:id', (req, res) => {
 //     res.render('/user/show.ejs');
 // });

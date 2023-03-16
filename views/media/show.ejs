@@ -1,5 +1,5 @@
-<%- include('../partials/headAndNav', { pageName: "Show Route" }) %>
-    <<h1>
+<%- include('../partials/headAndNav', { pageName: "Show Route" , user: user }) %>
+    <h1>
         <%= media.name %>
     </h1>
     <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
@@ -7,8 +7,6 @@
             <%= media.description %>
         </p>
 
+        </body>
 
-
-    </body>
-
-    </html>
+        </html>

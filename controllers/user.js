@@ -86,6 +86,19 @@ router.get('/delete', async (req, res, next) => {
     }
 })
 
+router.put('/update/:id', async (req, res, next) => {
+    try {
+        console.log(req.params.id);
+        console.log(req.body);
+        const updateItem = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updateItem);
+        res.redirect('/home');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
+
 router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
         res.redirect('/');

@@ -97,11 +97,15 @@ let televisionSeedData = [
 // seed route to get data into Mongo
 router.get('/seed', async (req, res, next) => {
     try {
+        // deletes whatever data was in the media schema
         const deletedOldOnes = await MediaSchema.deleteMany({});
+        // inserts all of our seed data through the MediaSchema
         const addMovies = await MediaSchema.insertMany(movieSeedData);
         const addTelevision = await MediaSchema.insertMany(televisionSeedData);
+        // console logs
         console.log(addMovies);
         console.log(addTelevision);
+        // redirects to the home page (index of media)
         res.redirect('/home');
     } catch (err) {
         console.log(err);

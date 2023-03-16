@@ -307,6 +307,46 @@ nav {
 1px 18px 8px rgba(16,16,16,0.2);
 }
 
+.signupcont{
+    font-size: 2.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 18vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
+.newacct {
+    font-size: 1.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
 #signbtn {
     margin-top: 8vh;
     position: absolute;

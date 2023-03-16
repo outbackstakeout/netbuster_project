@@ -347,6 +347,19 @@ nav {
 1px 18px 8px rgba(16,16,16,0.2);
 }
 
+.email {
+    margin-top: 3vh;
+}
+
+.pass {
+    margin-top: 3vh;
+}
+
+#createacct {
+    margin-left: 31%;
+    margin-top: 10%;
+}
+
 #signbtn {
     margin-top: 8vh;
     position: absolute;
@@ -361,7 +374,7 @@ nav {
 }
 
 .row {
-    block-size: 30rem;
+    block-size: 40rem;
 }
 
 /* .container{
@@ -397,7 +410,7 @@ nav {
 }
 
 .hide{
-    display: none;
+    /* display: none; */
 }
 
 #one{

@@ -1,18 +1,18 @@
 <%- include('../partials/headAndNav', {pageName: "Create a new account" }) %>
 
-    <h1>Signup for my awesome site</h1>
-    <form method="POST" action="signup">
+    <span class="signupcont">Signup for my awesome site</span>
+    <form method="POST" action="signup" class="newacct">
         <div>
             <label for="username">Enter your username</label>
             <input type="text" name="username" id="username">
         </div>
-        <div>
+        <div class="email">
             <label for="email">Enter your email</label>
             <input type="text" name="email" id="email">
         </div>
-        <div>
+        <div class="pass">
             <label for="password">Enter your password</label>
             <input type="text" name="password" id="password">
         </div>
-        <input type="submit" value="Create new account">
+        <input type="submit" value="Create new account" id="createacct">
     </form>

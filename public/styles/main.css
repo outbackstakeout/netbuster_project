@@ -1,22 +1,100 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: darkblue;
     color: white;
-    /* height: 100vh;
+    background: linear-gradient(45deg, black 0%, rgb(0, 0, 62) 35%, rgb(0, 0, 151) 100%);
+    /* height: 100%;
     width: 100%;
-    background-size: 300% 300%;
-    background: linear-gradient(45deg, #00129a,#ceb300);
-    animation: color 12s ease-in-out infinite;
+    background-size: 500% 500%;
+    background: linear-gradient(45deg, #000a52,#001add,#ceb300);
+    -webkit-animation: color 12s ease-in-out infinite linear;
 }
-@keyframes color{
+@-webkit-keyframes color{
     0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
+        background-position: 0 0;
     }
     100%{
-        background-position: 0 50%;
+        background-position: 100% 0;
     } */
+}
+
+.wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.box div {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 6px solid gold;
+}
+
+.box div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+}
+.box div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+.box div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+.box div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+.box div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 #bar {
@@ -94,7 +172,8 @@ h1 {
 }
 
 .title {
-
+    font-size: 2.5rem;
+    padding-bottom: 3%;
     display: flex;
     justify-content: center;
     position: relative;
@@ -140,7 +219,24 @@ h1 {
 }
 
 .slogan {
-    
+    margin-left: 42.5%;
+    margin-top: 11%;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
         
 }
 
@@ -265,24 +361,143 @@ nav {
     border-color: gold;
 }
 
+.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
+    font-size: xx-large;
+}
+
+.signintocont{
+    font-size: 2.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 18vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
+.signupcont{
+    font-size: 2.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 18vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
+.newacct {
+    font-size: 1.5rem;
+    color: gold;
+    /* display: flex; */
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 73.5vh;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: poppins; font-weight: 900; 
+    text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 6px 1px black,
+1px 15px 5px rgba(16,16,16,0.4),
+1px 18px 8px rgba(16,16,16,0.2);
+}
+
+.email {
+    margin-top: 3vh;
+}
+
+.pass {
+    margin-top: 3vh;
+}
+
+#createacct {
+    margin-left: 31%;
+    margin-top: 10%;
+}
+
+#signbtn {
+    margin-top: 8vh;
+    position: absolute;
+}
 .seed {
  
 }
 
-.seed img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    /* width: 20rem; */
-    height: auto;
+.col {
+    block-size: 30rem;
+    
 }
 
+.row {
+    block-size: 40rem;
+}
+
+/* .container{
+    display: grid;
+    column-gap: 40px;
+    row-gap: 20px;
+} */
+
+.container img {
+    width: 100%;
+    /* width: 20rem; */
+    height: auto;
+    border: 5px solid goldenrod;
+}
+
+
 #name {
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
 #jump {
-    display: flex;
+    /* display: flex;
+    justify-content: center; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+}
+
+#desc {
     justify-content: center;
+}
+.dropdown-menu{
+    margin-left: 37%;
+}
+
+.hide{
+    /* display: none; */
+}
+
+#one{
+    /* margin-left: 5%; */
+}
+
+#two {
+
 }

@@ -1,80 +1,124 @@
 <%- include('../partials/headAndNav', {pageName: "Home page" }) %>
     <h3 class="bekind">Be kind, Unwind</h3>
-    <h1 class="title">NETBUSTER - Media Index Route (library of movies and shows)</h1>
-    <div class="seed">
+    <span class="title">NETBUSTER - Media Index Route (library of movies and shows)</span>
+    
 <% for(let i = 0; i < media.length; i++) { %>
-    <% if (media[i].name === "21 Jump Street") { %>
-      <p id="jump">21 Jump Street</p>
-      <div id="poster">
-        <img src= <%= media[i].img %> alt="Movie Selection">
+    <% if (media[i].name === "The Mask") { %>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+      <p id="jump">The Mask</p>
+            <div id="poster">
+        <img id="one" src= <%= media[i].img %> alt="Movie Selection">
             </div>
-            <div id="desc">
+            <div class="hide" id="desc">
         <%= media[i].description %>
             </div>
-            <% } else if (media[i].name === "Click") { %> <p id="jump">Click</p>
+        </div>
+        
+        <div class="col">
+        <% } else if (media[i].name === "The Dark Knight") { %>
+                <p id="jump">The Dark Knight</p>
             <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
+              <img id="two" src= <%= media[i].img %> alt="Movie Selection">
                   </div>
-                  <div id="desc">
+                  <div class="hide" id="desc">
               <%= media[i].description %>
                   </div>
-            <% } else if (media[i].name === "The Dark Knight") { %> <p id="jump">The Dark Knight</p>
+                </div>
+                
+                <div class="col">
+                <% } else if (media[i].name === "Dodgeball") { %> 
+            <p id="jump">Dodgeball</p>
             <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
+              <img id="three" src= <%= media[i].img %> alt="Movie Selection">
                   </div>
-                  <div id="desc">
+                  <div class="hide" id="desc">
               <%= media[i].description %>
                   </div>
-            <% } else if (media[i].name === "Dodgeball") { %> <p id="jump">Dodgeball</p>
+             </div> 
+             
+             <div class="col">
+             <% } else if (media[i].name === "21 Jump Street") { %> 
+                <p id="jump">21 Jump Street</p>
             <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
+              <img id="four" src= <%= media[i].img %> alt="Movie Selection">
                   </div>
-                  <div id="desc">
+                  <div class="hide" id="desc">
               <%= media[i].description %>
                   </div>
-            <% } else if (media[i].name === "F9") { %> <p id="jump">F9</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
-            <% } else if (media[i].name === "John Wick") { %> <p id="jump">John Wick</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
-            <% } else if (media[i].name === "The Mask") { %> <p id="jump">The Mask</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
-            <% } else if (media[i].name === "Ocean's Eleven") { %> <p id="jump">Ocean's Eleven</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
-            <% } else if (media[i].name === "Spiderman No Way Home") { %> <p id="jump">Spiderman No Way Home</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
-            <% } else if (media[i].name === "The Wolf of Wall Street") { %> <p id="jump">The Wolf of Wall Street</p>
-            <div id="poster">
-              <img src= <%= media[i].img %> alt="Movie Selection">
-                  </div>
-                  <div id="desc">
-              <%= media[i].description %>
-                  </div>
+                </div>
 
+                <div class="col">
+                <% } else if (media[i].name === "Ocean's Eleven") { %> 
+                <p id="jump">Ocean's Eleven</p>
+            <div id="poster">
+              <img id="five" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+    </div>
+            
+    <div class="row">       
+        <div class="col">
+            <% } else if (media[i].name === "Click") { %> 
+                <p id="jump">Click</p>
+            <div id="poster">
+              <img id="six" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+
+
+        <div class="col">
+            <% } else if (media[i].name === "John Wick") { %> 
+                <p id="jump">John Wick</p>
+            <div id="poster">
+              <img id="seven" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+
+        <div class="col">        
+            <% } else if (media[i].name === "The Wolf of Wall Street") { %> 
+                <p id="jump">The Wolf of Wall Street</p>
+            <div id="poster">
+              <img id="eight" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+
+        <div class="col">      
+            <% } else if (media[i].name === "F9") { %> 
+                <p id="jump">F9</p>
+            <div id="poster">
+              <img id="nine" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+
+
+        <div class="col">        
+            <% } else if (media[i].name === "Spiderman No Way Home") { %> 
+                <p id="jump">Spiderman No Way Home</p>
+            <div id="poster">
+              <img id="ten" src= <%= media[i].img %> alt="Movie Selection">
+                  </div>
+                  <div class="hide" id="desc">
+              <%= media[i].description %>
+                  </div>
+                </div>
+                </div>
             <% continue; %>
    <% } else { %> 
         <div id="name">
@@ -83,7 +127,7 @@
         <div id="poster">
     <img src= <%= media[i].img %> alt="Movie Selection">
         </div>
-        <div id="desc">
+        <div class="hide" id="desc">
     <%= media[i].description %>
         </div>
    <% } %>
@@ -95,3 +139,19 @@
     </body>
 
     </html>
+
+
+
+
+    <!-- <script>
+        const moviePoster = document.getElementById('poster')
+        const description = document.getElementById('desc')
+
+        moviePoster.addEventListener('hover', display)
+    
+        function display() {
+            description.classList.remove('hide')
+    }
+
+
+    </script> -->

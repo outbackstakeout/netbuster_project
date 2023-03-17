@@ -201,7 +201,12 @@ router.get('/tv', (req, res) => {
 
 // routing to movies only
 router.get('/movies', (req, res) => {
-    res.render('media/movies/index.ejs')
+    try {
+
+        res.render('media/movies/index.ejs')
+    } catch (err) {
+        console.log()
+    }
 });
 
 // 🌈routing to specific movie from the movie index

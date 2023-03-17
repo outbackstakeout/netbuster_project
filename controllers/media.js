@@ -94,16 +94,39 @@ let televisionSeedData = [
     }
 ]
 
-// seed route to get data into Mongo
-router.get('/seed', async (req, res, next) => {
+// route to delete old seed data
+router.get('/deleteseed', async (req, res, next) => {
     try {
         // deletes whatever data was in the media schema
         const deletedOldOnes = await MediaSchema.deleteMany({});
+        console.log(deletedOldOnes);
+        // redirects to the home page (index of media)
+        res.redirect('/home/seedmovies');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+});
+
+// seed route to get movie data into Mongo
+router.get('/seedmovies', async (req, res, next) => {
+    try {
         // inserts all of our seed data through the MediaSchema
         const addMovies = await MediaSchema.insertMany(movieSeedData);
-        const addTelevision = await MediaSchema.insertMany(televisionSeedData);
-        // console logs
         // console.log(addMovies);
+        // redirects to the home page (index of media)
+        res.redirect('/home/seedtv');
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+});
+
+// seed route to get tv data into mongo
+router.get('/seedtv', async (req, res, next) => {
+    try {
+        // inserts all of our seed data through the MediaSchema
+        const addTelevision = await MediaSchema.insertMany(televisionSeedData);
         // console.log(addTelevision);
         // redirects to the home page (index of media)
         res.redirect('/home');
@@ -112,6 +135,7 @@ router.get('/seed', async (req, res, next) => {
         return next();
     }
 });
+
 
 // routing to index of movies and shows
 router.get('/', async (req, res, next) => {
@@ -158,8 +182,8 @@ router.get('/movies/:id', async (req, res, next) => {
     let myMedia;
     let findUser;
     try {
-        myMedia = await MediaSchema.findOne({_id:req.params.id});
-        findUser = await UserSchema.findOne({_id:req.session.currentUser._id})
+        myMedia = await MediaSchema.findOne({ _id: req.params.id });
+        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
         console.log(myMedia);
         console.log(findUser);
         res.render('media/show.ejs', { user: findUser, media: myMedia });

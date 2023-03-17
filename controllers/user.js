@@ -26,17 +26,27 @@ router.get('/signuppage', (req, res) => {
     res.render('user/signup.ejs')
 })
 
-router.get('/profile', async (req, res, next) => {
+router.get('/settings', async (req, res, next) => {
     let user;
     try {
         findUser = await UserSchema.findById(req.session.currentUser)
-        res.render('user/show.ejs', { user: findUser });
+        res.render('user/editAndDelete.ejs', { user: findUser });
     } catch (err) {
         console.log(err);
         return next();
     }
     console.log(req.session.currentUser);
 })
+
+// show route for a user to check out their liked movies and shows
+// router.get('/mystuff', async (req, res, next) => {
+//     try {
+
+//     } catch (err) {
+//         console.log(err);
+//         return next();
+//     }
+// })
 
 router.post('/signin', async (req, res, next) => {
     try {
@@ -101,10 +111,6 @@ router.put('/update/:id', async (req, res, next) => {
         console.log("Im hitting the post/put route")
         const updatedUser = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
         console.log(updatedUser);
-        // req.session.currentUser = await UserSchema.findById(req.params.id);
-        // let current = req.session.currentUser
-        // myMedia = await MediaSchema.find({});
-        // res.render('media/index.ejs', { user: current, media: myMedia });
         res.redirect('/home');
     } catch (err) {
         console.log(err);

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const MediaSchema = require('./Media');
+
 
 const userSchema = new mongoose.Schema(
     {
@@ -17,28 +19,10 @@ const userSchema = new mongoose.Schema(
             required: [true, "Please create a password."]
         },
         myMovies: [
-            {
-                name: String,
-                img: String,
-                description: String,
-                movieOrShow: String,
-                trailer: {
-                    type: String,
-                    required: false
-                }
-            }
+            MediaSchema
         ],
         myShows: [
-            {
-                name: String,
-                img: String,
-                description: String,
-                movieOrShow: String,
-                trailer: {
-                    type: String,
-                    required: false
-                }
-            }
+            MediaSchema
         ]
     },
     {

@@ -242,9 +242,11 @@ router.get('/movies/:id', async (req, res, next) => {
 router.put('/like/movie/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
+        const user = await UserSchema.findById(req.session.currentUser._id);
         console.log(likedMedia);
-        req.session.currentUser.myMovies.push(likedMedia)
-        console.log(req.session.currentUser.myMovies);
+        console.log(user.myShows);
+        user.myMovies.push(likedMedia);
+        console.log(user.myShows);
         res.redirect('/home');
     } catch (err) {
         console.log(err);
@@ -255,9 +257,11 @@ router.put('/like/movie/:id', async (req, res, next) => {
 router.put('/like/tv/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
+        const user = await UserSchema.findById(req.session.currentUser._id);
         console.log(likedMedia);
-        req.session.currentUser.myShows.push(likedMedia)
-        console.log(req.session.currentUser.myMovies);
+        console.log(user.myShows);
+        user.myShows.push(likedMedia);
+        console.log(user.myShows);
         res.redirect('/home');
     } catch (err) {
         console.log(err);

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const MediaSchema = require('./Media');
 
 
 const userSchema = new mongoose.Schema(
@@ -19,10 +18,16 @@ const userSchema = new mongoose.Schema(
             required: [true, "Please create a password."]
         },
         myMovies: [
-            MediaSchema
+            {
+                type: mongoose.Types.ObjectId,
+                ref: 'Media'
+            }
         ],
         myShows: [
-            MediaSchema
+            {
+                type: mongoose.Types.ObjectId,
+                ref: 'Media'
+            }
         ]
     },
     {
@@ -30,6 +35,6 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-const UserSchema = mongoose.model('UserSchema', userSchema);
+const User = mongoose.model('User', userSchema);
 
-module.exports = UserSchema;
+module.exports = User;

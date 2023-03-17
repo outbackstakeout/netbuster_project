@@ -243,7 +243,7 @@ router.put('/like/movie/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
         console.log(likedMedia);
-        req.session.currentUser.myMovies.push(likedMedia.name)
+        req.session.currentUser.myMovies.push(likedMedia)
         console.log(req.session.currentUser.myMovies);
         res.redirect('/home');
     } catch (err) {
@@ -256,7 +256,7 @@ router.put('/like/tv/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
         console.log(likedMedia);
-        req.session.currentUser.myShows.push(likedMedia.name)
+        req.session.currentUser.myShows.push(likedMedia)
         console.log(req.session.currentUser.myMovies);
         res.redirect('/home');
     } catch (err) {

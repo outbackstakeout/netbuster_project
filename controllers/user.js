@@ -38,14 +38,15 @@ router.get('/settings', async (req, res, next) => {
     console.log(req.session.currentUser);
 })
 
-router.get('/mystuff', async (req, res, next) => {
-    try {
+// show route for a user to check out their liked movies and shows
+// router.get('/mystuff', async (req, res, next) => {
+//     try {
 
-    } catch (err) {
-        console.log(err);
-        return next();
-    }
-})
+//     } catch (err) {
+//         console.log(err);
+//         return next();
+//     }
+// })
 
 router.post('/signin', async (req, res, next) => {
     try {
@@ -110,10 +111,6 @@ router.put('/update/:id', async (req, res, next) => {
         console.log("Im hitting the post/put route")
         const updatedUser = await UserSchema.findByIdAndUpdate(req.params.id, req.body);
         console.log(updatedUser);
-        // req.session.currentUser = await UserSchema.findById(req.params.id);
-        // let current = req.session.currentUser
-        // myMedia = await MediaSchema.find({});
-        // res.render('media/index.ejs', { user: current, media: myMedia });
         res.redirect('/home');
     } catch (err) {
         console.log(err);

@@ -1,9 +1,16 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: darkblue;
+    background-color: green;
     color: white;
     background: linear-gradient(45deg, black 0%, rgb(0, 0, 62) 35%, rgb(0, 0, 151) 100%);
+    border: 3px solid red;;
     /* height: 100%;
     width: 100%;
     background-size: 500% 500%;
@@ -18,14 +25,130 @@ body {
         background-position: 100% 0;
     } */
 }
-
 .wrapper{
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 100%;
     overflow: hidden;
     
 }
+.displays {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+}
+.leftDiv {
+    width: 25%;
+}
+#banner1 {
+    height: 99%;
+    width: 99%;
+    border: 5px solid goldenrod;
+}
+
+.rightDiv {
+    width: 25%;
+}
+#banner2 {
+    height: 99%;
+    width: 99%;
+    border: 5px solid goldenrod;
+}
+
+.midDiv {
+    width: 50%;
+    margin-left: 2%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bekind {
+    margin-top: 5%;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.slogan {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px black,
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 7px 1px black,
+        1px 8px 1px black,
+        1px 9px 1px black,
+        1px 10px 1px black,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+        
+}
+
+#tvshows{
+    font-size: 2.5rem;
+}
+#movies{
+    font-size: 2.5rem;
+}
+#games{
+    font-size: 2.5rem;
+}
+#more{
+    font-size: 2.5rem;
+}
+
+.features {
+    animation: glow 2s ease-in-out;
+}
+@keyframes glow{
+    0%, 100%{
+    color: white;
+    text-shadow: 0 0 12px gold, 0 0 50px gold, 0 0 100px gold;
+
+    }
+    10%, 90% {
+    color: black;
+    text-shadow: none;
+    }
+}
+.features > #tvshows {
+    animation-delay: 0.25s;
+}
+.features > #movies {
+    animation-delay: 0.5s;
+}
+.features > #games {
+    animation-delay: 0.75s;
+}
+.features > #more {
+    animation-delay: 1s;
+}
+
+
+#logo {
+    width: 30%;
+}
+
 
 .box div {
     position: absolute;
@@ -135,10 +258,8 @@ body {
 }
 
 h1 {
-    position: absolute;
     font-size: 2.5rem;
-    margin-left: 42%;
-    margin-top: 10%;
+
 }
 
 #browse:hover {
@@ -196,145 +317,24 @@ h1 {
     
 }
 
-.bekind {
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 1px 1px 1px black,
-        1px 2px 1px black,
-        1px 3px 1px black,
-        1px 4px 1px black,
-        1px 5px 1px black,
-        1px 6px 1px black,
-        1px 7px 1px black,
-        1px 8px 1px black,
-        1px 9px 1px black,
-        1px 10px 1px black,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
-}
-
-.slogan {
-    margin-left: 42.5%;
-    margin-top: 11%;
-    text-transform: uppercase;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 1px 1px 1px black,
-        1px 2px 1px black,
-        1px 3px 1px black,
-        1px 4px 1px black,
-        1px 5px 1px black,
-        1px 6px 1px black,
-        1px 7px 1px black,
-        1px 8px 1px black,
-        1px 9px 1px black,
-        1px 10px 1px black,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
-        
-}
-
-#tvshows{
-    position: absolute;
-    font-size: 2.5rem;
-    margin-left: 47%;
-    margin-top: 20%;
-}
-#movies{
-    position: absolute;
-    font-size: 2.5rem;
-    margin-left: 48%;
-    margin-top: 22%;
-}
-#games{
-    position: absolute;
-    font-size: 2.5rem;
-    margin-left: 48%;
-    margin-top: 24%;
-}
-#more{
-    position: absolute;
-    font-size: 2.5rem;
-    margin-left: 47.5%;
-    margin-top: 26%;
-}
-
-.features {
-    animation: glow 2s ease-in-out;
-}
-@keyframes glow{
-    0%, 100%{
-    color: white;
-    text-shadow: 0 0 12px gold, 0 0 50px gold, 0 0 100px gold;
-
-    }
-    10%, 90% {
-    color: black;
-    text-shadow: none;
-    }
-}
-.features > #tvshows {
-    animation-delay: 0.25s;
-}
-.features > #movies {
-    animation-delay: 0.5s;
-}
-.features > #games {
-    animation-delay: 0.75s;
-}
-.features > #more {
-    animation-delay: 1s;
-}
-
-
-#logo {
-    width: 20%;
-  margin-left: 40%;
-  display: block;
-  position: absolute;
-    
-}
-
-#banner1 {
-    position:absolute;
-    height: 100%;
-    width: 20%;
-    border: 5px solid goldenrod;
-
-
-}
-
-#banner2 {
-    position:absolute;
-    height: 100%;
-    width: 20%;
-    margin-left: 80%;
-    border: 5px solid goldenrod;
-}
-
 nav {
     display: flex;
     justify-content: space-evenly;
 }
 
 #redCarpet {
-    width: 61%;
-    margin-left: 20%;
-    margin-top: 15%;
+    position: relative;
+    bottom: 30%;
+    left: 10.5%;
+    width: 103.5%;
+    /* height: auto; */
+    margin-right: 25%;
 }
 
 #signin {
-    position: absolute;
     border-radius: 20px;
     width: 4em;
     height: 2em;
-    margin-left: 45%;
     font-size: 2rem;
     font-weight: bold;
     margin-top: 15%;
@@ -342,14 +342,13 @@ nav {
 }
 
 #signup {
-    position: absolute;
     border-radius: 20px;
     width: 4.3em;
     height: 2em;
     font-size: 2rem;
     font-weight: bold;
     margin-top: 15%;
-    margin-left: 51%;
+    margin-left: 5%;
     background-color: goldenrod;
 }
 
@@ -477,11 +476,6 @@ nav {
     block-size: 40rem;
 }
 
-/* .container{
-    display: grid;
-    column-gap: 40px;
-    row-gap: 20px;
-} */
 
 .container img {
     width: 100%;

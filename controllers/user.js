@@ -26,16 +26,25 @@ router.get('/signuppage', (req, res) => {
     res.render('user/signup.ejs')
 })
 
-router.get('/profile', async (req, res, next) => {
+router.get('/settings', async (req, res, next) => {
     let user;
     try {
         findUser = await UserSchema.findById(req.session.currentUser)
-        res.render('user/show.ejs', { user: findUser });
+        res.render('user/editAndDelete.ejs', { user: findUser });
     } catch (err) {
         console.log(err);
         return next();
     }
     console.log(req.session.currentUser);
+})
+
+router.get('/mystuff', async (req, res, next) => {
+    try {
+
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 })
 
 router.post('/signin', async (req, res, next) => {

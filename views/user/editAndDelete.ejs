@@ -1,0 +1,22 @@
+<%- include('../partials/headAndNav', {pageName: "Update account information" }) %>
+
+    <h1>Update Account Information for <%= user.username %>
+    </h1>
+    <form method="POST" action="/user/update/<%= user._id %>?_method=PUT">
+        <div>
+            <label for="username">Change your username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label for="email">Update your email address</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Change your password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <input type="submit" value="Apply new changes">
+    </form>
+    <form method="DELETE" action=/user/delete/?_method=DELETE>
+        <input type="submit" value="Delete Account">
+    </form>

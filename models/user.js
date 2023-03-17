@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const userSchema = new mongoose.Schema(
     {
         username: {
@@ -18,26 +19,14 @@ const userSchema = new mongoose.Schema(
         },
         myMovies: [
             {
-                name: String,
-                img: String,
-                description: String,
-                movieOrShow: String,
-                trailer: {
-                    type: String,
-                    required: false
-                }
+                type: mongoose.Types.ObjectId,
+                ref: 'Media'
             }
         ],
         myShows: [
             {
-                name: String,
-                img: String,
-                description: String,
-                movieOrShow: String,
-                trailer: {
-                    type: String,
-                    required: false
-                }
+                type: mongoose.Types.ObjectId,
+                ref: 'Media'
             }
         ]
     },
@@ -46,6 +35,6 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-const UserSchema = mongoose.model('UserSchema', userSchema);
+const User = mongoose.model('User', userSchema);
 
-module.exports = UserSchema;
+module.exports = User;

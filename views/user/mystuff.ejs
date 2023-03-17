@@ -2,7 +2,37 @@
     <h2>Liked Movies</h2>
     <div>
         <% for (let i=0; i < user.myMovies.length; i++) { %>
-
+            <div class="col">
+                <a href=/home/movies/<%=user.myMovies[i]._id %> class="atag">
+                    <p>
+                        <%= user.myMovies[i].name %>
+                    </p>
+                    <div id="poster">
+                        <img id="one" src=<%=user.myMovies[i].img %> alt="Movie Selection">
+                    </div>
+                </a>
+                <div class="hide" id="desc">
+                    <%= user.myMovies[i].description %>
+                </div>
+            </div>
+            <% } %>
     </div>
 
     <h2>Liked Shows</h2>
+    <div>
+        <% for (let i=0; i < user.myShows.length; i++) { %>
+            <div class="col">
+                <a href=/home/tv/<%=user.myShows[i]._id %> class="atag">
+                    <p>
+                        <%= user.myShows[i].name %>
+                    </p>
+                    <div id="poster">
+                        <img id="one" src=<%=user.myShows[i].img %> alt="Show Selection">
+                    </div>
+                </a>
+                <div class="hide" id="desc">
+                    <%= user.myShows[i].description %>
+                </div>
+            </div>
+            <% } %>
+    </div>

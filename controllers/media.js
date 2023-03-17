@@ -1,7 +1,8 @@
 const express = require('express');
+const { user } = require('.');
 const router = express.Router();
 
-const { MediaSchema, UserSchema } = require('../models');
+const { Media, User } = require('../models');
 
 let movieSeedData = [
     {
@@ -125,7 +126,7 @@ let televisionSeedData = [
 router.get('/deleteseed', async (req, res, next) => {
     try {
         // deletes whatever data was in the media schema
-        const deletedOldOnes = await MediaSchema.deleteMany({});
+        const deletedOldOnes = await Media.deleteMany({});
         console.log(deletedOldOnes);
         // redirects to the home page (index of media)
         res.redirect('/home/seedmovies');
@@ -138,8 +139,8 @@ router.get('/deleteseed', async (req, res, next) => {
 // seed route to get movie data into Mongo
 router.get('/seedmovies', async (req, res, next) => {
     try {
-        // inserts all of our seed data through the MediaSchema
-        const addMovies = await MediaSchema.insertMany(movieSeedData);
+        // inserts all of our seed data through the Media
+        const addMovies = await Media.insertMany(movieSeedData);
         // console.log(addMovies);
         // redirects to the home page (index of media)
         res.redirect('/home/seedtv');
@@ -152,8 +153,8 @@ router.get('/seedmovies', async (req, res, next) => {
 // seed route to get tv data into mongo
 router.get('/seedtv', async (req, res, next) => {
     try {
-        // inserts all of our seed data through the MediaSchema
-        const addTelevision = await MediaSchema.insertMany(televisionSeedData);
+        // inserts all of our seed data through the Media
+        const addTelevision = await Media.insertMany(televisionSeedData);
         // console.log(addTelevision);
         // redirects to the home page (index of media)
         res.redirect('/home');
@@ -167,12 +168,11 @@ router.get('/seedtv', async (req, res, next) => {
 // routing to index of movies and shows
 router.get('/', async (req, res, next) => {
     let myMedia;
-    let user;
     try {
         // this will comb through the database to find our media
-        myMedia = await MediaSchema.find({});
+        myMedia = await Media.find({});
         // console.log(myMedia);
-        findUser = await UserSchema.findById(req.session.currentUser._id)
+        findUser = await User.findById(req.session.currentUser._id)
         // console.log(req.session);
         // this context will pass Media as an array
         res.render('media/index.ejs', { media: myMedia, user: findUser });
@@ -186,8 +186,8 @@ router.get('/', async (req, res, next) => {
 // routing to TV shows only
 router.get('/tv', async (req, res, next) => {
     try {
-        const shows = await MediaSchema.find({ movieOrShow: "show" })
-        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        const shows = await Media.find({ movieOrShow: "show" })
+        findUser = await User.findOne({ _id: req.session.currentUser._id })
         res.render('media/tv/index.ejs', { media: shows, user: findUser })
     } catch (err) {
         console.log(err);
@@ -200,8 +200,8 @@ router.get('/tv/:id', async (req, res, next) => {
     let myMedia;
     let findUser;
     try {
-        myMedia = await MediaSchema.findOne({ _id: req.params.id });
-        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        myMedia = await Media.findOne({ _id: req.params.id });
+        findUser = await User.findOne({ _id: req.session.currentUser._id })
         res.render('media/show.ejs', { user: findUser, media: myMedia });
     } catch (err) {
         console.log(err);
@@ -213,8 +213,8 @@ router.get('/tv/:id', async (req, res, next) => {
 // routing to movies only
 router.get('/movies', async (req, res, next) => {
     try {
-        const movies = await MediaSchema.find({ movieOrShow: "movie" })
-        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        const movies = await Media.find({ movieOrShow: "movie" })
+        findUser = await User.findOne({ _id: req.session.currentUser._id })
         // console.log(movies);
         res.render('media/movies/index.ejs', { media: movies, user: findUser });
     } catch (err) {
@@ -228,8 +228,9 @@ router.get('/movies/:id', async (req, res, next) => {
     let myMedia;
     let findUser;
     try {
-        myMedia = await MediaSchema.findOne({ _id: req.params.id });
-        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        myMedia = await Media.findById(req.params.id);
+        console.log(req.params.id);
+        findUser = await User.findOne({ _id: req.session.currentUser._id })
         console.log(myMedia);
         console.log(findUser);
         res.render('media/show.ejs', { user: findUser, media: myMedia });
@@ -241,11 +242,17 @@ router.get('/movies/:id', async (req, res, next) => {
 
 router.put('/like/movie/:id', async (req, res, next) => {
     try {
-        const likedMedia = await MediaSchema.findById(req.params.id);
-        console.log(likedMedia);
-        req.session.currentUser.myMovies.push(likedMedia)
-        console.log(req.session.currentUser.myMovies);
-        res.redirect('/home');
+        let user;
+        user = await User.findById(req.session.currentUser._id);
+        console.log(user.myMovies);
+        if (user.myMovies.includes(req.params.id)) {
+            return res.redirect('/home');
+        } else {
+            user.myMovies.push(req.params.id);
+            await user.save();
+            console.log(user.myMovies);
+            res.redirect('/home');
+        }
     } catch (err) {
         console.log(err);
         return next();
@@ -254,11 +261,17 @@ router.put('/like/movie/:id', async (req, res, next) => {
 
 router.put('/like/tv/:id', async (req, res, next) => {
     try {
-        const likedMedia = await MediaSchema.findById(req.params.id);
-        console.log(likedMedia);
-        req.session.currentUser.myShows.push(likedMedia)
-        console.log(req.session.currentUser.myMovies);
-        res.redirect('/home');
+        let user;
+        user = await User.findById(req.session.currentUser._id);
+        console.log(user.myShows);
+        if (user.myShows.includes(req.params.id)) {
+            return res.redirect('/home');
+        } else {
+            user.myShows.push(req.params.id);
+            await user.save();
+            console.log(user.myShows);
+            res.redirect('/home');
+        }
     } catch (err) {
         console.log(err);
         return next();

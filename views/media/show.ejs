@@ -1,11 +1,18 @@
-<%- include('../partials/headAndNav', { pageName: "Show Route" , user: user }) %>
+<%- include('../partials/headAndNav', { pageName: "Show Route", otherStyleSheet: "/styles/show.css", user: user }) %>
     <h1>
         <%= media.name %>
     </h1>
-    <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
-        <p>
+    <div>
+        <iframe class="youtb" width="1050" height="590.63" src="https://www.youtube.com/embed/rt-2cxAiPJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="showd">
             <%= media.description %>
-        </p>
+            </p>
+    </div>
+     <div class="pos">
+    <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
+        </div>
+    
+       
 
         </body>
 

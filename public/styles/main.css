@@ -514,5 +514,6 @@ nav {
 }
 
 .atag{
-    position: absolute;
+    position: relative;
+    color: white;
 }

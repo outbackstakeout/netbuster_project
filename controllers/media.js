@@ -184,28 +184,42 @@ router.get('/', async (req, res, next) => {
 
 
 // routing to TV shows only
-router.get('/tv', (req, res) => {
-    res.render('media/tv/index.ejs')
+router.get('/tv', async (req, res, next) => {
+    try {
+        const shows = await MediaSchema.find({ movieOrShow: "show" })
+        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        res.render('media/tv/index.ejs', { media: shows, user: findUser })
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
 });
 
 // 🌈routing to specific tv show from the tv show index
-// router.get('/tv/:id', async (req, res, next) => {
-//     try {
-
-//     } catch (err) {
-//         console.log(err);
-//         return next();
-//     }
-//     res.render('media/show.ejs')
-// });
+router.get('/tv/:id', async (req, res, next) => {
+    let myMedia;
+    let findUser;
+    try {
+        myMedia = await MediaSchema.findOne({ _id: req.params.id });
+        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        res.render('media/show.ejs', { user: findUser, media: myMedia });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+    res.render('media/show.ejs')
+});
 
 // routing to movies only
-router.get('/movies', (req, res) => {
+router.get('/movies', async (req, res, next) => {
     try {
-
-        res.render('media/movies/index.ejs')
+        const movies = await MediaSchema.find({ movieOrShow: "movie" })
+        findUser = await UserSchema.findOne({ _id: req.session.currentUser._id })
+        // console.log(movies);
+        res.render('media/movies/index.ejs', { media: movies, user: findUser });
     } catch (err) {
-        console.log()
+        console.log(err);
+        return next();
     }
 });
 
@@ -229,7 +243,7 @@ router.put('/like/movie/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
         console.log(likedMedia);
-        req.session.currentUser.myMovies.push(likedMedia.name)
+        req.session.currentUser.myMovies.push(likedMedia)
         console.log(req.session.currentUser.myMovies);
         res.redirect('/home');
     } catch (err) {
@@ -242,7 +256,7 @@ router.put('/like/tv/:id', async (req, res, next) => {
     try {
         const likedMedia = await MediaSchema.findById(req.params.id);
         console.log(likedMedia);
-        req.session.currentUser.myShows.push(likedMedia.name)
+        req.session.currentUser.myShows.push(likedMedia)
         console.log(req.session.currentUser.myMovies);
         res.redirect('/home');
     } catch (err) {

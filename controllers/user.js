@@ -39,14 +39,18 @@ router.get('/settings', async (req, res, next) => {
 })
 
 // show route for a user to check out their liked movies and shows
-// router.get('/mystuff', async (req, res, next) => {
-//     try {
-
-//     } catch (err) {
-//         console.log(err);
-//         return next();
-//     }
-// })
+router.get('/mystuff', async (req, res, next) => {
+    try {
+        const findUser = await UserSchema.findById(req.session.currentUser)
+        // const movies = await UserSchema.find({ movieOrShow: "movie" })
+        // const shows = await UserSchema.find({ movieOrShow: "show" })
+        console.log(findUser);
+        res.render('user/mystuff.ejs', { user: findUser });
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
 
 router.post('/signin', async (req, res, next) => {
     try {

@@ -16,8 +16,30 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, "Please create a password."]
         },
-        myMovies: [String],
-        myShows: [String]
+        myMovies: [
+            {
+                name: String,
+                img: String,
+                description: String,
+                movieOrShow: String,
+                trailer: {
+                    type: String,
+                    required: false
+                }
+            }
+        ],
+        myShows: [
+            {
+                name: String,
+                img: String,
+                description: String,
+                movieOrShow: String,
+                trailer: {
+                    type: String,
+                    required: false
+                }
+            }
+        ]
     },
     {
         timestamps: true

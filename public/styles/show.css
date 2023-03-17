@@ -210,3 +210,7 @@ h1 {
     width: 800px;
     height: auto;
 }
+.likeButton {
+    margin-right: 10%;
+    position: absolute;
+}

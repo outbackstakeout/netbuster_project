@@ -15,9 +15,9 @@
         <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
     </div>
 
-    <div class="likeButton">
+    <div>
         <form method="POST" action="home/like/<%= media._id %>?_method=PUT">
-            <input type="button" value="like">
+            <input type="button" value="like" class="likeButton">
         </form>
     </div>
 

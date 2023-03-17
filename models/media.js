@@ -4,7 +4,8 @@ const mediaSchema = new mongoose.Schema(
     {
         name: String,
         img: String,
-        description: String
+        description: String,
+        trailer: String
     },
     {
         timestamps: true

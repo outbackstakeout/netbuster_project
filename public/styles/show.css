@@ -188,6 +188,7 @@ h1 {
 }
 
 .showd{
+    font-size: 1.5em;
     position: absolute;
     margin-left: 44%;
     margin-right:19%;
@@ -198,6 +199,7 @@ h1 {
     position: absolute;
     margin-left: 42%;
     margin-top: 12%;
+    border: 5px solid goldenrod;
 }
 .pos{
     position: absolute;

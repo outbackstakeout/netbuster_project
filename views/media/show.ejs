@@ -16,9 +16,15 @@
     </div>
 
     <div>
-        <form method="POST" action="home/like/<%= media._id %>?_method=PUT">
-            <input type="button" value="like" class="likeButton">
-        </form>
+        <% if (media.movieOrShow==="movie" ) { %>
+            <form method="POST" action="/home/like/movie/<%= media._id %>?_method=PUT">
+                <input type="submit" value="like" class="likeButton">
+            </form>
+            <% } else { %>
+                <form method="POST" action="/home/like/tv/<%= media._id %>?_method=PUT">
+                    <input type="submit" value="like" class="likeButton">
+                </form>
+                <% } %>
     </div>
 
     </body>

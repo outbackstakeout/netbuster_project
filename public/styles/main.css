@@ -126,7 +126,7 @@ body {
 }
 
 .feat{
-    top: 37%;
+    top: 45%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -357,7 +357,7 @@ nav {
 
 .redcarpet{
     position: relative;
-    width: 100%;
+    width: 99.6%;
     height: 100%;
 }
 

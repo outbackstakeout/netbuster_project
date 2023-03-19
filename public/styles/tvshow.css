@@ -250,3 +250,7 @@ h1 {
     width: auto;
     height: 100%;
 }
+
+nav {
+    z-index: 9;
+}

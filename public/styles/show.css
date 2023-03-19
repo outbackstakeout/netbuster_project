@@ -116,7 +116,7 @@ body {
 #bar:before,
 #bar:after {
     content: '';
-    position: absolute;
+    /* position: absolute; */
     z-index: -1;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     top: 50%;
@@ -142,6 +142,10 @@ body {
         1px 25px 35px rgba(255, 255, 255, 0.2),
         1px 30px 60px rgba(255, 255, 255, 0.4);
 
+}
+
+nav {
+    z-index: 9;
 }
 
 h1 {

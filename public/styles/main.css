@@ -66,7 +66,7 @@ body {
     position: relative;
     width: 60%;
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -113,19 +113,21 @@ body {
 }
 
 
-#tvshows{
+#tvshows {
     font-size: 200%;
 }
-#movies{
+
+#movies {
     font-size: 200%;
     position: absolute;
     margin-top: 50%;
 }
-#more{
+
+#more {
     font-size: 200%;
 }
 
-.feat{
+.feat {
     top: 45%;
     position: absolute;
     display: flex;
@@ -353,27 +355,28 @@ h1 {
 nav {
     display: flex;
     justify-content: space-evenly;
+    z-index: 9;
 }
 
-.redcarpet{
+.redcarpet {
     position: relative;
     width: 99.6%;
     height: 100%;
 }
 
-.redcarpet img{
+.redcarpet img {
     position: absolute;
-    width:100%;
+    width: 100%;
     bottom: 1px;
 }
 
-.access{
-display: flex;
-margin-top: 4%;
+.access {
+    display: flex;
+    margin-top: 4%;
 }
 
 #signin {
-    
+
     border-radius: 20px;
     width: 100%;
     height: 75%;
@@ -508,9 +511,7 @@ margin-top: 4%;
     width: 20%;
 }
 
-#username {
-    
-}
+#username {}
 
 #password {
     position: absolute;
@@ -518,7 +519,7 @@ margin-top: 4%;
     margin-left: 0.7%;
 }
 
-#enterpw{
+#enterpw {
     margin-top: 1%;
 }
 

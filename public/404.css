@@ -2,6 +2,10 @@ body {
     background-color: darkblue;
 }
 
+nav {
+    z-index: 9;
+}
+
 h1 {
     color: white;
     font-size: 2em;

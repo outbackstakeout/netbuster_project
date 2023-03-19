@@ -1,13 +1,14 @@
-<%- include('../partials/headAndNav', {pageName: "Login" }) %>
+<%- include('../partials/headAndNavAlt', {pageName: "Login" }) %>
 
     <span class="signintocont">Sign in to continue streaming</span>
+    
     <form method="POST" action="signin" class="login">
         <div>
             <label for="username">Enter your username</label>
             <input type="text" name="username" id="username">
         </div>
         <div>
-            <label for="password">Enter your password</label>
+            <label id="enterpw" for="password">Enter your password</label>
             <input type="password" name="password" id="password">
         </div>
         <input type="submit" value="Sign in" id="signbtn">

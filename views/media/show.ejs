@@ -8,12 +8,12 @@
                 <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
             </div>
             <div id="iframe">
-                <%= if (media.movieOrShow==="movie" ) { %>
+                <% if (media.movieOrShow==="movie" ) { %>
                     <iframe class="youtb" width="1050" height="590.63" src="<%= media.trailer%>"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-                    <% } else { %>
+                    <% } %>
                         <div id="buttonAndDescription">
                             <p class="showd">
                                 <%= media.description %>

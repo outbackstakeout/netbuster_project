@@ -1,0 +1,26 @@
+<%- include('../partials/headAndNav', { pageName: "Show Route" , otherStyleSheet: "/styles/tvshow.css" , user: user })
+    %>
+    <div id="pagebox">
+        <div id="showbox">
+            <div class="pos">
+                <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
+            </div>
+            <div id="frame">
+                <div id="buttonAndDescription">
+                    <h1>
+                        <%= media.name %>
+                    </h1>
+                    <p class="showd">
+                        <%= media.description %>
+                    </p>
+                    <form method="POST" action="/home/like/tv/<%= media._id %>?_method=PUT">
+                        <input type="submit" value="Like" class="likeButton">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </body>
+
+    </html>

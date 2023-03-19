@@ -10,7 +10,8 @@ body {
     background-color: green;
     color: white;
     background: linear-gradient(45deg, black 0%, rgb(0, 0, 62) 35%, rgb(0, 0, 151) 100%);
-    border: 3px solid red;;
+    border: 3px solid red;
+    ;
     /* height: 100%;
     width: 100%;
     background-size: 500% 500%;
@@ -25,22 +26,26 @@ body {
         background-position: 100% 0;
     } */
 }
-.wrapper{
+
+.wrapper {
     /* position: absolute; */
     width: 100%;
     height: 100%;
     overflow: hidden;
-    
+
 }
+
 .displays {
     display: flex;
     height: 100vh;
     margin: 0;
     width: 100vw;
 }
+
 .leftDiv {
     width: 25%;
 }
+
 #banner1 {
     height: 99%;
     width: 99%;
@@ -50,6 +55,7 @@ body {
 .rightDiv {
     width: 25%;
 }
+
 #banner2 {
     height: 99%;
     width: 99%;
@@ -59,10 +65,11 @@ body {
 .midDiv {
     width: 50%;
     margin-left: 2%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .bekind {
     margin-top: 5%;
     justify-content: center;
@@ -78,10 +85,10 @@ body {
         1px 8px 1px black,
         1px 9px 1px black,
         1px 10px 1px black,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
 .slogan {
@@ -97,50 +104,62 @@ body {
         1px 8px 1px black,
         1px 9px 1px black,
         1px 10px 1px black,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
-        
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
+
 }
 
-#tvshows{
+#tvshows {
     font-size: 2.5rem;
 }
-#movies{
+
+#movies {
     font-size: 2.5rem;
 }
-#games{
+
+#games {
     font-size: 2.5rem;
 }
-#more{
+
+#more {
     font-size: 2.5rem;
 }
 
 .features {
     animation: glow 2s ease-in-out;
 }
-@keyframes glow{
-    0%, 100%{
-    color: white;
-    text-shadow: 0 0 12px gold, 0 0 50px gold, 0 0 100px gold;
+
+@keyframes glow {
+
+    0%,
+    100% {
+        color: white;
+        text-shadow: 0 0 12px gold, 0 0 50px gold, 0 0 100px gold;
 
     }
-    10%, 90% {
-    color: black;
-    text-shadow: none;
+
+    10%,
+    90% {
+        color: black;
+        text-shadow: none;
     }
 }
-.features > #tvshows {
+
+.features>#tvshows {
     animation-delay: 0.25s;
 }
-.features > #movies {
+
+.features>#movies {
     animation-delay: 0.5s;
 }
-.features > #games {
+
+.features>#games {
     animation-delay: 0.75s;
 }
-.features > #more {
+
+.features>#more {
     animation-delay: 1s;
 }
 
@@ -158,63 +177,73 @@ body {
     border: 6px solid gold;
 }
 
-.box div:nth-child(1){
+.box div:nth-child(1) {
     top: 12%;
     left: 42%;
     animation: animate 10s linear infinite;
 }
-.box div:nth-child(2){
+
+.box div:nth-child(2) {
     top: 70%;
     left: 50%;
     animation: animate 10s linear infinite;
 }
-.box div:nth-child(3){
+
+.box div:nth-child(3) {
     top: 17%;
     left: 6%;
     animation: animate 9s linear infinite;
 }
-.box div:nth-child(4){
+
+.box div:nth-child(4) {
     top: 20%;
     left: 60%;
     animation: animate 10s linear infinite;
 }
-.box div:nth-child(5){
+
+.box div:nth-child(5) {
     top: 67%;
     left: 10%;
     animation: animate 6s linear infinite;
 }
-.box div:nth-child(6){
+
+.box div:nth-child(6) {
     top: 80%;
     left: 70%;
     animation: animate 12s linear infinite;
 }
-.box div:nth-child(7){
+
+.box div:nth-child(7) {
     top: 60%;
     left: 80%;
     animation: animate 15s linear infinite;
 }
-.box div:nth-child(8){
+
+.box div:nth-child(8) {
     top: 32%;
     left: 25%;
     animation: animate 16s linear infinite;
 }
-.box div:nth-child(9){
+
+.box div:nth-child(9) {
     top: 90%;
     left: 25%;
     animation: animate 9s linear infinite;
 }
-.box div:nth-child(10){
+
+.box div:nth-child(10) {
     top: 20%;
     left: 80%;
     animation: animate 5s linear infinite;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         transform: scale(0) translateY(0) rotate(0);
         opacity: 1;
     }
-    100%{
+
+    100% {
         transform: scale(1.3) translateY(-90px) rotate(360deg);
         opacity: 0;
     }
@@ -223,15 +252,15 @@ body {
 #bar {
     color: gold;
     position: relative;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 #bar:before,
-#bar:after{
+#bar:after {
     content: '';
     position: absolute;
     z-index: -1;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     top: 50%;
     bottom: 0;
     left: 10px;
@@ -250,10 +279,10 @@ body {
         1px 8px 1px white,
         1px 9px 1px white,
         1px 10px 1px white,
-    1px 18px 6px rgba(255, 255, 255, 0.4),
-    1px 22px 10px rgba(255, 255, 255, 0.2),
-    1px 25px 35px rgba(255, 255, 255, 0.2),
-    1px 30px 60px rgba(255, 255, 255, 0.4);
+        1px 18px 6px rgba(255, 255, 255, 0.4),
+        1px 22px 10px rgba(255, 255, 255, 0.2),
+        1px 25px 35px rgba(255, 255, 255, 0.2),
+        1px 30px 60px rgba(255, 255, 255, 0.4);
 
 }
 
@@ -310,11 +339,11 @@ h1 {
         1px 8px 1px black,
         1px 9px 1px black,
         1px 10px 1px black,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
-    
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
+
 }
 
 nav {
@@ -326,7 +355,7 @@ nav {
     position: relative;
     bottom: 30%;
     left: 10.5%;
-    width: 103.5%;
+    width: 100%;
     /* height: auto; */
     margin-right: 25%;
 }
@@ -380,7 +409,7 @@ nav {
 1px 18px 8px rgba(16,16,16,0.2);
 } */
 
-.signintocont{
+.signintocont {
     font-size: 2.5rem;
     color: gold;
     /* display: flex; */
@@ -389,18 +418,19 @@ nav {
     margin-left: 73.5vh;
     justify-content: center;
     text-transform: uppercase;
-    font-family: poppins; font-weight: 900; 
+    font-family: poppins;
+    font-weight: 900;
     text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 4px 1px black,
-    1px 5px 1px black,
-    1px 6px 1px black,
-1px 15px 5px rgba(16,16,16,0.4),
-1px 18px 8px rgba(16,16,16,0.2);
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 15px 5px rgba(16, 16, 16, 0.4),
+        1px 18px 8px rgba(16, 16, 16, 0.2);
 }
 
-.signupcont{
+.signupcont {
     font-size: 2.5rem;
     color: gold;
     /* display: flex; */
@@ -409,15 +439,16 @@ nav {
     margin-left: 73.5vh;
     justify-content: center;
     text-transform: uppercase;
-    font-family: poppins; font-weight: 900; 
+    font-family: poppins;
+    font-weight: 900;
     text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 4px 1px black,
-    1px 5px 1px black,
-    1px 6px 1px black,
-1px 15px 5px rgba(16,16,16,0.4),
-1px 18px 8px rgba(16,16,16,0.2);
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 15px 5px rgba(16, 16, 16, 0.4),
+        1px 18px 8px rgba(16, 16, 16, 0.2);
 }
 
 .newacct {
@@ -429,15 +460,16 @@ nav {
     margin-left: 73.5vh;
     justify-content: center;
     text-transform: uppercase;
-    font-family: poppins; font-weight: 900; 
+    font-family: poppins;
+    font-weight: 900;
     text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 4px 1px black,
-    1px 5px 1px black,
-    1px 6px 1px black,
-1px 15px 5px rgba(16,16,16,0.4),
-1px 18px 8px rgba(16,16,16,0.2);
+        1px 2px 1px black,
+        1px 3px 1px black,
+        1px 4px 1px black,
+        1px 5px 1px black,
+        1px 6px 1px black,
+        1px 15px 5px rgba(16, 16, 16, 0.4),
+        1px 18px 8px rgba(16, 16, 16, 0.2);
 }
 
 .email {
@@ -457,19 +489,20 @@ nav {
     margin-top: 8vh;
     position: absolute;
 }
-#username{
+
+#username {
     position: absolute;
 }
-#password{
+
+#password {
     position: absolute;
 }
-.seed {
- 
-}
+
+.seed {}
 
 .col {
     block-size: 30rem;
-    
+
 }
 
 .row {
@@ -499,15 +532,16 @@ nav {
 #desc {
     justify-content: center;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     margin-left: 47%;
 }
 
-.hide{
+.hide {
     /* display: none; */
 }
 
-.atag{
+.atag {
     position: relative;
     color: white;
 }

@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background-color: green;
@@ -264,7 +264,7 @@ body {
 #bar:before,
 #bar:after {
     content: '';
-    /* position: absolute; */
+    position: absolute;
     z-index: -1;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     top: 50%;
@@ -526,12 +526,12 @@ nav {
 .seed {}
 
 .col {
-    block-size: 30rem;
+    /* block-size: 10rem; */
 
 }
 
 .row {
-    block-size: 40rem;
+    /* block-size: 40rem; */
 }
 
 

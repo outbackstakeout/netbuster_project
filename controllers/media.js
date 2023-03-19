@@ -202,7 +202,7 @@ router.get('/tv/:id', async (req, res, next) => {
     try {
         myMedia = await Media.findOne({ _id: req.params.id });
         findUser = await User.findOne({ _id: req.session.currentUser._id })
-        res.render('media/show.ejs', { user: findUser, media: myMedia });
+        res.render('media/tvshow.ejs', { user: findUser, media: myMedia });
     } catch (err) {
         console.log(err);
         return next();

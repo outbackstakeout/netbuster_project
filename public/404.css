@@ -11,3 +11,7 @@ h1 {
     font-size: 2em;
     text-align: center;
 }
+
+nav {
+    z-index: 9;
+}

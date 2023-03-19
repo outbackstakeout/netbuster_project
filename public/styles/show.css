@@ -252,6 +252,10 @@ h1 {
     margin-top: 0%;
 }
 
+nav {
+    z-index: 9;
+}
+
 .pos img {
     /* display: flex; */
     margin-top: 0%;

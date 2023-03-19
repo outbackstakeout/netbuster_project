@@ -63,9 +63,10 @@ body {
 }
 
 .midDiv {
-    width: 50%;
-    margin-left: 2%;
-    display: flex;
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display:flex;
     flex-direction: column;
     align-items: center;
 }
@@ -111,24 +112,30 @@ body {
 
 }
 
-#tvshows {
-    font-size: 2.5rem;
+
+#tvshows{
+    font-size: 3.5rem;
+}
+#movies{
+    font-size: 3.5rem;
+    position: absolute;
+    margin-top: 50%;
+}
+#more{
+    font-size: 3.5rem;
 }
 
-#movies {
-    font-size: 2.5rem;
-}
-
-#games {
-    font-size: 2.5rem;
-}
-
-#more {
-    font-size: 2.5rem;
+.feat{
+    top: 37%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 20%;
 }
 
 .features {
     animation: glow 2s ease-in-out;
+    
 }
 
 @keyframes glow {
@@ -351,16 +358,25 @@ nav {
     justify-content: space-evenly;
 }
 
-#redCarpet {
+.redcarpet{
     position: relative;
-    bottom: 30%;
-    left: 10.5%;
     width: 100%;
-    /* height: auto; */
-    margin-right: 25%;
+    height: 100%;
+}
+
+.redcarpet img{
+    position: absolute;
+    width:100%;
+    bottom: 1px;
+}
+
+.access{
+display: flex;
+margin-top: 4%;
 }
 
 #signin {
+    
     border-radius: 20px;
     width: 4em;
     height: 2em;

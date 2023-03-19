@@ -8,24 +8,24 @@
                 <img src=<%=media.img %> alt=Movie poster for <%= media.name %>>
             </div>
             <div id="iframe">
-                <iframe class="youtb" width="1050" height="590.63" src="<%= media.trailer%>"
+                <% if (media.movieOrShow) <iframe class="youtb" width="1050" height="590.63" src="<%= media.trailer%>"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <div id="buttonAndDescription">
-                    <p class="showd">
-                        <%= media.description %>
-                    </p>
-                    <% if (media.movieOrShow==="movie" ) { %>
-                        <form method="POST" action="/home/like/movie/<%= media._id %>?_method=PUT">
-                            <input type="submit" value="like" class="likeButton">
-                        </form>
-                        <% } else { %>
-                            <form method="POST" action="/home/like/tv/<%= media._id %>?_method=PUT">
+                    <div id="buttonAndDescription">
+                        <p class="showd">
+                            <%= media.description %>
+                        </p>
+                        <% if (media.movieOrShow==="movie" ) { %>
+                            <form method="POST" action="/home/like/movie/<%= media._id %>?_method=PUT">
                                 <input type="submit" value="like" class="likeButton">
                             </form>
-                            <% } %>
-                </div>
+                            <% } else { %>
+                                <form method="POST" action="/home/like/tv/<%= media._id %>?_method=PUT">
+                                    <input type="submit" value="like" class="likeButton">
+                                </form>
+                                <% } %>
+                    </div>
             </div>
 
         </div>

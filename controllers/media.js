@@ -207,7 +207,6 @@ router.get('/tv/:id', async (req, res, next) => {
         console.log(err);
         return next();
     }
-    res.render('media/show.ejs')
 });
 
 // routing to movies only

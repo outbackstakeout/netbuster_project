@@ -311,7 +311,7 @@ h1 {
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 200%;
     padding-bottom: 3%;
     display: flex;
     justify-content: center;
@@ -511,16 +511,17 @@ nav {
 .seed {}
 
 .col {
-    /* block-size: 10rem; */
+    /* block-size: 10%; */
 
 }
 
 .row {
-    /* block-size: 40rem; */
+    /* block-size: 10%; */
 }
 
 .container {
     position: relative;
+    width: 120%;
 }
 
 .container img {

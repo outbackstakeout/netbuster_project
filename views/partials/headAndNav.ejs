@@ -54,10 +54,26 @@
         </li>
       </ul>
     </div>
-    <a href="http://localhost:4000/user/settings" class="navbar-brand mb-0 h1" id="userprofile">User Profile</a>
+    <div class="navbar-brand mb-0 h1" id="userprofile">
+    <a href="http://localhost:4000/user/settings" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+    data-bs-toggle="dropdown">User Profile</a>
+    <ul class="dropdown-menu" id="userdrop" aria-labelledby="navbarDropdown">
+      <li>
+        <a href="http://localhost:4000/user/mystuff" class="dropdown-item">My Stuff
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:4000/user/settings" class="dropdown-item">settings
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:4000/user/logout" class="dropdown-item">logout
+        </a>
+      </li>
+    </ul>
+  </div>
     <% if(typeof user !=='undefined' ) { %>
-      <a href="http://localhost:4000/user/logout">Logout</a>
-      <p>Hello, <%= user %>
+      <p>Hello, <%= user.username %>
       </p>
       <% } else { %>
         <!-- do we need to reroute back to login or sign up if users need to sign in to get past our sweet frickin' landing page? Or should we allow them to browse our library before creating an account/signing in? either is fine with me, though I don't think Netflix lets viewers browse first - but we can do whatever -->

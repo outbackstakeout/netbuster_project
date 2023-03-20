@@ -7,11 +7,10 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-repeat: no-repeat;
     color: white;
     background: linear-gradient(45deg, black 0%, rgb(0, 0, 62) 35%, rgb(0, 0, 151) 100%);
     border: 3px solid red;
-    ;
     /* height: 100%;
     width: 100%;
     background-size: 500% 500%;
@@ -355,7 +354,7 @@ h1 {
 nav {
     display: flex;
     justify-content: space-evenly;
-    z-index: 9;
+    /* z-index: 9; */
 }
 
 .redcarpet {
@@ -533,7 +532,9 @@ nav {
 .row {
     /* block-size: 40rem; */
 }
-
+.container{
+    position: relative;
+}
 
 .container img {
     width: 100%;
@@ -559,7 +560,11 @@ nav {
 }
 
 .dropdown-menu {
-    margin-left: 47%;
+    margin-left: 46%;
+}
+
+#userdrop{
+    margin-left: 71%;
 }
 
 .hide {

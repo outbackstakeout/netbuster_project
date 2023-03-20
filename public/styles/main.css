@@ -273,7 +273,6 @@ body {
 .dropdown-item {
     text-shadow: none;
     font-weight: 800;
-
 }
 
 h1 {
@@ -548,11 +547,11 @@ nav {
 }
 
 .dropdown-menu {
-    margin-left: 46%;
+    margin-left: 33%;
 }
 
 #userdrop {
-    margin-left: 70.5%;
+    margin-left: 52.5%;
 }
 
 .hide {

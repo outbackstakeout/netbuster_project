@@ -133,11 +133,12 @@ body {
     font-weight: 800;
 
 }
+
 .dropdown-menu {
     margin-left: 46%;
 }
 
-#userdrop{
+#userdrop {
     margin-left: 70.5%;
 }
 
@@ -146,10 +147,11 @@ nav {
 }
 
 h1 {
-    position: absolute;
+    /* position: absolute; */
+    display: flex;
     font-size: 2.5rem;
     margin-left: 50%;
-    margin-top: 5%;
+    margin-top: 1.5%;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 1px 1px 1px black,

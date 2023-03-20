@@ -1,5 +1,5 @@
 body {
-    
+
     margin: 0;
     padding: 0;
     width: 100%;
@@ -119,7 +119,7 @@ body {
 #bar:before,
 #bar:after {
     content: '';
-    position: absolute;
+    /* position: absolute; */
     z-index: -1;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     top: 50%;
@@ -139,7 +139,7 @@ body {
     margin-left: 46%;
 }
 
-#userdrop{
+#userdrop {
     margin-left: 70.5%;
 }
 

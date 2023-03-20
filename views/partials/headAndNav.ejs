@@ -72,9 +72,10 @@
       </li>
     </ul>
   </div>
-    <% if(typeof user !=='undefined' ) { %>
-      <p>Hello, <%= user.username %>
+  <p class="navbar-brand mb-0 h1">Hello, <%= user.username %>
       </p>
+    <% if(typeof user !=='undefined' ) { %>
+      
       <% } else { %>
         <!-- do we need to reroute back to login or sign up if users need to sign in to get past our sweet frickin' landing page? Or should we allow them to browse our library before creating an account/signing in? either is fine with me, though I don't think Netflix lets viewers browse first - but we can do whatever -->
         <a href="http://localhost:4000/login" class="navbar-brand mb-0 h1" id="loginbtn">Login</a>

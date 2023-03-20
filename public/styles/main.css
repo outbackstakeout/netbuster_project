@@ -562,3 +562,8 @@ nav {
     position: relative;
     color: white;
 }
+
+.walruswatermelon img {
+    width: 25%;
+    /* display: none; */
+}

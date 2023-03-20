@@ -72,9 +72,9 @@
 
                 <div class="row">
                     <div class="col">
-                        <% } else if (media[i].name==="John Wick" ) { %>
-                            <a href=/home/movies/<%=media[i]._id %> class="atag">
-                                <p id="jump">John Wick</p>
+                        <% } else if (media[i].name==="The Mandalorian" ) { %>
+                            <a href=/home/tv/<%=media[i]._id %> class="atag">
+                                <p id="jump">The Mandalorian</p>
                                 <div id="poster">
                                     <img id="six" src=<%=media[i].img %> alt="Show Selection">
                                 </div>
@@ -86,9 +86,9 @@
 
 
                     <div class="col">
-                        <% } else if (media[i].name==="The Mask" ) { %>
-                            <a href=/home/movies/<%=media[i]._id %> class="atag">
-                                <p id="jump">The Mask</p>
+                        <% } else if (media[i].name==="Power" ) { %>
+                            <a href=/home/tv/<%=media[i]._id %> class="atag">
+                                <p id="jump">Power</p>
                                 <div id="poster">
                                     <img id="seven" src=<%=media[i].img %> alt="Show Selection">
                                 </div>
@@ -98,47 +98,6 @@
                             </div>
                     </div>
 
-                    <div class="col">
-                        <% } else if (media[i].name==="Ocean's Eleven" ) { %>
-                            <a href=/home/movies/<%=media[i]._id %> class="atag">
-                                <p id="jump">Ocean's Eleven</p>
-                                <div id="poster">
-                                    <img id="eight" src=<%=media[i].img %> alt="Show Selection">
-                                </div>
-                            </a>
-                            <div class="hide" id="desc">
-                                <%= media[i].description %>
-                            </div>
-                    </div>
-
-                    <div class="col">
-                        <% } else if (media[i].name==="Spiderman No Way Home" ) { %>
-                            <a href=/home/movies/<%=media[i]._id %> class="atag">
-                                <p id="jump">Spiderman No Way Home</p>
-
-                                <div id="poster">
-                                    <img id="nine" src=<%=media[i].img %> alt="Show Selection">
-                                </div>
-                            </a>
-                            <div class="hide" id="desc">
-                                <%= media[i].description %>
-                            </div>
-                    </div>
-
-
-                    <div class="col">
-                        <% } else if (media[i].name==="The Wolf of Wall Street" ) { %>
-                            <a href=/home/movies/<%=media[i]._id %> class="atag">
-                                <p id="jump">The Wolf of Wall Street</p>
-
-                                <div id="poster">
-                                    <img id="ten" src=<%=media[i].img %> alt="Show Selection">
-                                </div>
-                            </a>
-                            <div class="hide" id="desc">
-                                <%= media[i].description %>
-                            </div>
-                    </div>
                 </div>
                 <% continue; %>
                     <% } else { %>

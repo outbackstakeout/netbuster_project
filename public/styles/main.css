@@ -1,16 +1,13 @@
-html {
-    
-}
+html {}
 
 body {
     width: 100%;
-   height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
     color: white;
     background: linear-gradient(45deg, black 0%, rgb(0, 0, 62) 35%, rgb(0, 0, 151) 100%);
-    border: 3px solid red;
     /* height: 100%;
     width: 100%;
     background-size: 500% 500%;
@@ -277,7 +274,7 @@ body {
 .dropdown-item {
     text-shadow: none;
     font-weight: 800;
-    
+
 }
 
 h1 {
@@ -438,12 +435,13 @@ nav {
 }
 
 .signupcont {
+    /* position: relative; */
     font-size: 2.5rem;
     color: gold;
-    /* display: flex; */
-    position: absolute;
-    margin-top: 18vh;
-    margin-left: 73.5vh;
+    display: flex;
+    margin-top: 25vh;
+    /* margin-left: 73.5vh; */
+    margin-bottom: 5vh;
     justify-content: center;
     text-transform: uppercase;
     font-family: poppins;
@@ -463,8 +461,8 @@ nav {
     color: gold;
     /* display: flex; */
     position: absolute;
-    margin-top: 30vh;
-    margin-left: 73.5vh;
+    /* margin-top: 30vh; */
+    margin-left: 55vh;
     justify-content: center;
     text-transform: uppercase;
     font-family: poppins;
@@ -521,7 +519,8 @@ nav {
 .row {
     /* block-size: 40rem; */
 }
-.container{
+
+.container {
     position: relative;
 }
 
@@ -552,7 +551,7 @@ nav {
     margin-left: 46%;
 }
 
-#userdrop{
+#userdrop {
     margin-left: 70.5%;
 }
 

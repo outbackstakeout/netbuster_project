@@ -182,6 +182,16 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/chill', async (req, res, next) => {
+    try {
+        findUser = await User.findById(req.session.currentUser._id)
+        res.render('chill.ejs', { user: findUser })
+    } catch (err) {
+        console.log(err);
+        return next();
+    }
+})
+
 
 // routing to TV shows only
 router.get('/tv', async (req, res, next) => {

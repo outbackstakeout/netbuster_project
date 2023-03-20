@@ -7,10 +7,7 @@ const { User, Media } = require('../models');
 router.get('/', async (req, res, next) => {
     let myMedia;
     try {
-        // this will comb through the database to find our media
         myMedia = await Media.find({});
-        // console.log(myMedia);
-        // this context will pass Media as an array
         res.render('media/index.ejs', { media: myMedia });
     } catch (err) {
         console.log(err);
@@ -125,8 +122,5 @@ router.get('/logout', function (req, res) {
         res.redirect('/');
     });
 });
-// router.get('/:id', (req, res) => {
-//     res.render('/user/show.ejs');
-// });
 
 module.exports = router;

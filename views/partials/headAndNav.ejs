@@ -55,24 +55,28 @@
       </ul>
     </div>
     <div class="navbar-brand mb-0 h1" id="userprofile">
-    <a href="http://localhost:4000/user/settings" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-    data-bs-toggle="dropdown">User Profile</a>
-    <ul class="dropdown-menu" id="userdrop" aria-labelledby="navbarDropdown" style="background-color: goldenrod;">
-      <li>
-        <a href="http://localhost:4000/user/mystuff" class="dropdown-item">My Stuff
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:4000/user/settings" class="dropdown-item">settings
-        </a>
-      </li>
-      <li>
-        <a href="http://localhost:4000/user/logout" class="dropdown-item">logout
-        </a>
-      </li>
-    </ul>
-  </div>
-  <p class="navbar-brand mb-0 h1">Hello, <%= user.username %>
+
+      <a href="http://localhost:4000/user/settings" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+        data-bs-toggle="dropdown">User Profile</a>
+      <ul class="dropdown-menu" id="userdrop" aria-labelledby="navbarDropdown">
+        <li>
+          <a href="http://localhost:4000/user/mystuff" class="dropdown-item">My Stuff
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost:4000/user/settings" class="dropdown-item">settings
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost:4000/user/logout" class="dropdown-item">logout
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="http://localhost:4000/home/chill" class="navbar-brand mb-0 h1" id="homebtn">
+      And Chill</a>
+    <% if(typeof user !=='undefined' ) { %>
+      <p>Hello, <%= user.username %>
       </p>
     <% if(typeof user !=='undefined' ) { %>
       

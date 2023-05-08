@@ -1,6 +1,7 @@
 require("../config/connection.js");
+const mongoose = require("mongoose");
 
 module.exports = {
-    Media: require("./media"),
-    User: require("./user"),
+    Media: require("./media.js"),
+    User: require("./user.js"),
 };

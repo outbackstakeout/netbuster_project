@@ -1,6 +1,6 @@
-require('../config/connection.js');
+require("../config/connection.js");
 
 module.exports = {
-    Media: require('./Media'),
-    User: require('./User')
-}
+    Media: require("./media"),
+    User: require("./user"),
+};

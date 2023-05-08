@@ -24,6 +24,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "19.9.0"
+  },
   "bugs": {
     "url": "https://github.com/guantanamobosch/netbuster_project/issues"
   },
